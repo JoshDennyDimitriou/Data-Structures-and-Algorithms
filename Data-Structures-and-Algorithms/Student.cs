@@ -1,0 +1,86 @@
+﻿using Data_Structures_and_Algorithms.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+// Author: Josh Denny-Dimitriou
+// Date: 05/02/2026
+// Purpose: Student class for the program
+
+namespace Data_Structures_and_Algorithms
+{
+    class Student : Person
+    {
+        // Instance Variables
+        private string studentID;
+        private string program;
+        private string dateRegistered;
+        private Enrollment enrollment;
+
+        // Default values
+        const string DEF_STUDENT_ID = "None Provided";
+        const string DEF_PROGRAM = "None Provided";
+        const string DEF_DATE_REGISTERED = "None Provided";
+
+        // Property Assessors
+        public string StudentStudentID
+        {
+            get
+            { return studentID; }
+            set
+            { studentID = value; }
+        }
+        public string StudentProgram
+        {
+            get
+            { return program; }
+            set
+            { program = value; }
+        }
+        public string StudentDateRegistered
+        {
+            get
+            { return dateRegistered; }
+            set
+            { dateRegistered = value; }
+        }
+        public Enrollment StudentEnrollment
+        {
+            get
+            { return enrollment; }
+            set
+            { enrollment = value; }
+        }
+
+        // Constructors
+        // All-args
+        public Student(string studentID, string program, string dateRegistered, Enrollment enrollment) : base()
+        {
+            StudentStudentID = studentID;
+            StudentProgram = program;
+            StudentDateRegistered = dateRegistered;
+            StudentEnrollment = enrollment;
+        }
+        // All-args --> Address
+        public Student(string studentID, string program, string dateRegistered) : this(studentID, program, dateRegistered, new Enrollment())
+        {
+
+        }
+        // No-args
+        public Student() : this(DEF_STUDENT_ID, DEF_PROGRAM, DEF_DATE_REGISTERED)
+        {
+
+        }
+
+        // ToString Override
+        public override string ToString()
+        {
+            return base.ToString() + "Student ID: " + StudentStudentID +
+                "\nProgram: " + StudentProgram +
+                "\nDate Registered:" + StudentDateRegistered +
+                "\nEnrollment: [\n" + StudentEnrollment + "\n\t\t]";
+         }
+    }
+}

@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Author: Josh Denny-Dimitriou
+// Date: 04/02/2026
+// Purpose: Address class for the program
+
 namespace Data_Structures_and_Algorithms.Models
 {
     class Address

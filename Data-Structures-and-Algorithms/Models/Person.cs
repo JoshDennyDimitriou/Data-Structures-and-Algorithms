@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// Author: Josh Denny-Dimitriou
+// Date: 04/02/2026
+// Purpose: Person class for the program
+
 namespace Data_Structures_and_Algorithms.Models
 {
     class Person
@@ -57,12 +61,13 @@ namespace Data_Structures_and_Algorithms.Models
             PersonPhoneNumber = phoneNumber;
             PersonAddress = address;
         }
-        // No-args
-        public Person() : this(DEF_NAME, DEF_EMAIL, DEF_PHONE_NUMBER)
+        // All-args --> Address
+        public Person(string name, string email, string phoneNumber) : this(name, email, phoneNumber, new Address())
         {
 
         }
-        public Person(string name, string email, string phoneNumber) : this(name, email, phoneNumber, new Address())
+        // No-args
+        public Person() : this(DEF_NAME, DEF_EMAIL, DEF_PHONE_NUMBER)
         {
 
         }
@@ -73,7 +78,7 @@ namespace Data_Structures_and_Algorithms.Models
             return "Name: " + PersonName +
                 "\nEmail: " + PersonEmail +
                 "\nPhone Number: " + PersonPhoneNumber + 
-                "\nAddress: {\n" + PersonAddress + "\n\t}";
+                "\nAddress: {\n" + PersonAddress + "\n\t}\n";
         }
     }
 }
