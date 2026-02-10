@@ -68,6 +68,11 @@ namespace Data_Structures_and_Algorithms
         {
 
         }
+        // Partial-args --> Only studentID
+        public Student(string studentID)
+        {
+            StudentStudentID = studentID;
+        }
         // No-args
         public Student() : this(DEF_STUDENT_ID, DEF_PROGRAM, DEF_DATE_REGISTERED)
         {

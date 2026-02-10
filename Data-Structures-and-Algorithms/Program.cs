@@ -164,6 +164,13 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("All-args Student (With Enrollment)");
             Student stu3 = new Student("001245972", "Cert III",  "15/08/2023", enr3);
             Console.WriteLine(stu3);
+
+            Console.WriteLine();
+
+            // Partial-args with only studentID
+            Console.WriteLine("Partial-args Student (Only studentID)");
+            Student stu4 = new Student("004568134");
+            Console.WriteLine(stu4);
         }
     }                              
 }                                  
