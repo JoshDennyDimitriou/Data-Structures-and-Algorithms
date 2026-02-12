@@ -171,7 +171,34 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Partial-args Student (Only studentID)");
             Student stu4 = new Student("004568134");
             Console.WriteLine(stu4);
+
+            Console.WriteLine();
+
+            // Student Equals() override testing
+            Console.WriteLine("----------Equals Testing----------");
+            Student stu5 = new Student();
+            Student stu6 = new Student();
+            // Testing stu5 == stu6
+            Console.WriteLine("stu5 == stu6? | Expected True: " + (stu5 == stu6));
+            // Testing stu5.Equals(stu6)
+            Console.WriteLine("stu5.Equals(stu6)? | Expected True: " + stu5.Equals(stu6));
+            // Testing stu5 == stu4
+            Console.WriteLine("stu5 == stu4? | Expected False: " + (stu5 == stu4));
+            // Testing stu5 == stu4
+            Console.WriteLine("stu5.Equals stu4? | Expected False: " + stu5.Equals(stu4));
+            // All true/false scenarios passed thus it can be assumed both == and '.Equals()' will both work the same
+            // Changing stu5 studentID to match stu4 studentID
+            Console.WriteLine("|| Changing stu5 ID to match stu4's ||");
+            stu5.StudentStudentID = "004568134";
+            Console.WriteLine("stu5.Equals stu4? | Expected True: " + stu5.Equals(stu4));
+            // Testing stu1 != stu2
+            Console.WriteLine("stu1 != stu2? | Expected True: " + (stu1 != stu2));
+
+            Console.WriteLine();
+
+            // Testing GetHashCode()
+            Console.WriteLine("----------GetHashCode Testing----------");
+            Console.WriteLine(stu4.GetHashCode());
         }
     }                              
-}                                  
-                                   
+}              

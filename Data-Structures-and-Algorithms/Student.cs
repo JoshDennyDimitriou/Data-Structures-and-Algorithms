@@ -87,5 +87,39 @@ namespace Data_Structures_and_Algorithms
                 "\nDate Registered:" + StudentDateRegistered +
                 "\nEnrollment: [\n" + StudentEnrollment + "\n\t\t]";
          }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if (ReferenceEquals(obj, this))
+                return true;
+            if (obj.GetType() != this.GetType())
+                return false;
+            Student student = (Student)obj;
+            return student.StudentStudentID == this.StudentStudentID;
+        }
+        public static bool operator == (Student stu1, Student stu2)
+        {
+            return object.Equals(stu1, stu2);
+        }
+        public static bool operator != (Student stu1, Student stu2)
+        {
+            return !object.Equals(stu1, stu2);
+        }
+        public static bool Equals(object obj1, object obj2)
+        {
+            if (obj1 == obj2)
+                return true;
+            if (obj1 == null || obj2 == null)
+                return false;
+            else
+                return obj1.Equals(obj2);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.StudentStudentID.GetHashCode();
+        }
     }
 }
