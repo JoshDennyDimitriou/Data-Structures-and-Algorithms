@@ -79,7 +79,10 @@ namespace Data_Structures_and_Algorithms
 
         }
 
-        // ToString Override
+        /// <summary>
+        /// An override of the default ToString method
+        /// </summary>
+        /// <returns>string</returns>
         public override string ToString()
         {
             return base.ToString() + "Student ID: " + StudentStudentID +
@@ -88,6 +91,11 @@ namespace Data_Structures_and_Algorithms
                 "\nEnrollment: [\n" + StudentEnrollment + "\n\t\t]";
          }
 
+        /// <summary>
+        /// An override of the default Equals method
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -99,24 +107,46 @@ namespace Data_Structures_and_Algorithms
             Student student = (Student)obj;
             return student.StudentStudentID == this.StudentStudentID;
         }
+        /// <summary>
+        /// Overloading the Equals method
+        /// </summary>
+        /// <param name="stu1">Object - Student 1</param>
+        /// <param name="stu2">Object - Student 2</param>
+        /// <returns></returns>
         public static bool operator == (Student stu1, Student stu2)
         {
             return object.Equals(stu1, stu2);
         }
+        /// <summary>
+        /// Overloading the Not Equals method
+        /// </summary>
+        /// <param name="stu1">Object - Student 1</param>
+        /// <param name="stu2">Object - Student 2</param>
+        /// <returns></returns>
         public static bool operator != (Student stu1, Student stu2)
         {
             return !object.Equals(stu1, stu2);
         }
-        public static bool Equals(object obj1, object obj2)
+        /// <summary>
+        /// Takes in two Student objects and compares them
+        /// </summary>
+        /// <param name="stu1">Object - Student 1</param>
+        /// <param name="stu2">Object - Student 2</param>
+        /// <returns></returns>
+        public static bool Equals(object stu1, object stu2)
         {
-            if (obj1 == obj2)
+            if (stu1 == stu2)
                 return true;
-            if (obj1 == null || obj2 == null)
+            if (stu1 == null || stu2 == null)
                 return false;
             else
-                return obj1.Equals(obj2);
+                return stu1.Equals(stu2);
         }
 
+        /// <summary>
+        /// Retrieves the hashcode of the studentID to allow for easier searching and sorting
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             return this.StudentStudentID.GetHashCode();
