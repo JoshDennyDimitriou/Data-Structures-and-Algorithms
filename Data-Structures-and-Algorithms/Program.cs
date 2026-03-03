@@ -198,7 +198,12 @@ namespace Data_Structures_and_Algorithms
 
             // Testing GetHashCode()
             Console.WriteLine("----------GetHashCode Testing----------");
-            Console.WriteLine(stu4.GetHashCode());
+            Console.WriteLine("Student 1 Hash Code: " + stu1.GetHashCode());
+            Console.WriteLine("Student 2 Hash Code: " + stu2.GetHashCode());
+            Console.WriteLine("Student 3 Hash Code: " + stu3.GetHashCode());
+            Console.WriteLine("Student 4 Hash Code: " + stu4.GetHashCode());
+            Console.WriteLine("Student 5 Hash Code: " + stu5.GetHashCode());
+            Console.WriteLine("Student 6 Hash Code: " + stu6.GetHashCode());
         }
     }                              
 }              
