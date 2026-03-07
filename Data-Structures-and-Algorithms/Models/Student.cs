@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms
 {
-    class Student : Person
+    class Student : Person, IComparable<Student>
     {
         // Instance Variables
         private string studentID;
@@ -69,7 +69,7 @@ namespace Data_Structures_and_Algorithms
 
         }
         // Partial-args --> Only studentID
-        public Student(string studentID)
+        public Student(string studentID)/* : this(DEF_PROGRAM, DEF_DATE_REGISTERED)*/
         {
             StudentStudentID = studentID;
         }
@@ -150,6 +150,13 @@ namespace Data_Structures_and_Algorithms
         public override int GetHashCode()
         {
             return this.StudentStudentID.GetHashCode();
+        }
+
+        public int CompareTo(Student other)
+        {
+            if (other == null)
+                return 1;
+            return this.GetHashCode().CompareTo(other.GetHashCode());
         }
     }
 }
