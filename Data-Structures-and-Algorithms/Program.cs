@@ -169,7 +169,7 @@ namespace Data_Structures_and_Algorithms
 
             // Partial-args with only studentID
             Console.WriteLine("Partial-args Student (Only studentID)");
-            Student stu4 = new Student("004568134");
+            Student stu4 = new Student("0045681354"); // 004568134
             Console.WriteLine(stu4);
 
             Console.WriteLine();
@@ -204,6 +204,67 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Student 4 Hash Code: " + stu4.GetHashCode());
             Console.WriteLine("Student 5 Hash Code: " + stu5.GetHashCode());
             Console.WriteLine("Student 6 Hash Code: " + stu6.GetHashCode());
+
+            Console.WriteLine();
+
+            // Testing Sorting
+            Console.WriteLine("----------Sorting Testing----------");
+            int[] scores = { 2, 5, 26, 4, 64, 1, 34, 25, 63, 91, 109, 24, 31, 45, 12 };
+            Console.WriteLine("Original Scores array:");
+            Utilities.PrintArray(scores);
+            Console.WriteLine("Sorting Array:");
+            Utilities.MergeSort(scores);
+            Utilities.PrintArray(scores);
+            Console.WriteLine("Linear Search:");
+            Console.WriteLine("Searching 34: " + Utilities.LinearSearch(scores, 34));
+            Console.WriteLine("Binary Search:");
+            Console.WriteLine("Searching 109: " + Utilities.BinarySearch(scores, 109));
+            Console.WriteLine("Searching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " Binary -> " + Utilities.BinarySearch(scores, 11));
+
+            Console.WriteLine();
+
+            string[] stringArray = { "Adelaide", "Perth", "Melbourne", "Brisbane", "Sydney"};
+            Console.WriteLine("Original Students Array");
+            Utilities.PrintArray(stringArray);
+            Console.WriteLine("Sorting Array:");
+            Utilities.MergeSort(stringArray);
+            Utilities.PrintArray(stringArray);
+            Console.WriteLine("Linear Search:");
+            Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(stringArray, "Perth"));
+            Console.WriteLine("Binary Search:");
+            Console.WriteLine("Searching Sydney: " + Utilities.BinarySearch(stringArray, "Sydney"));
+            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
+
+
+            Console.WriteLine();
+
+            stu5.StudentStudentID = "001234567";
+            Console.WriteLine("Printing an Array of Students");
+            Student[] students = { stu1, stu2, stu3, stu4, stu5, stu6 };
+            Console.Write("StudentID: ");
+            Utilities.PrintStudents(students);
+            Console.Write("\nHashCode: ");
+            Utilities.PrintArray(students);
+            Console.WriteLine("Merge Sorting Students based on StudentID hashcode");
+            Utilities.MergeSort(students);
+            Console.Write("StudentID: ");
+            Utilities.PrintStudents(students);
+            Console.Write("\nHashCode: ");
+            Utilities.PrintArray(students);
+            Console.WriteLine("Searching for Student 1: " + Utilities.BinarySearch(students, stu1));
+
+            Console.WriteLine("Would you like to see a list of StudentID's? ");
+            string ans = Console.ReadLine();
+            ans.ToUpper();
+            if (ans == "Y")
+                Utilities.PrintStudents(students);
+
+            Console.WriteLine("Enter a StudentID to search for:");
+            string value = Console.ReadLine();
+            Student inputStudent = new Student(value);
+            Console.WriteLine(inputStudent.GetHashCode());
+            Console.WriteLine(stu4.GetHashCode());
+            Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
         }
     }                              
 }              
