@@ -1,6 +1,7 @@
 ﻿using Data_Structures_and_Algorithms.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -253,16 +254,58 @@ namespace Data_Structures_and_Algorithms
             Utilities.PrintArray(students);
             Console.WriteLine("Searching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
-            Console.WriteLine("Would you like to see a list of StudentID's? ");
-            string ans = Console.ReadLine();
-            if (ans.ToUpper() == "Y")
-                Utilities.PrintStudents(students);
+            //Console.WriteLine("Would you like to see a list of StudentID's? ");
+            //string ans = Console.ReadLine();
+            //if (ans.ToUpper() == "Y")
+            //    Utilities.PrintStudents(students);
 
-            Console.WriteLine("Enter a StudentID to search for:");
-            string value = Console.ReadLine();
-            Student inputStudent = new Student(value);
-            Console.WriteLine(inputStudent.StudentStudentID);
-            Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
+            //Console.WriteLine("Enter a StudentID to search for:");
+            //string value = Console.ReadLine();
+            //Student inputStudent = new Student(value);
+            //Console.WriteLine(inputStudent.StudentStudentID);
+            //Console.WriteLine("\nBinary Searching:");
+            //Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
+            //Console.WriteLine("\nLinear Searching:");
+            //Console.WriteLine("Searching for " + value + ". Fonud at: " + Utilities.LinearSearch(students, inputStudent));
+
+            // Timing different sorting algos
+            // Creating 3 different arrays of random numbers to be sorted
+            int[] numsBubble = new int[100000];
+            Random rnd = new Random();
+            for (int i = 0; i < 100000; i++)
+            {
+                numsBubble[i] = rnd.Next(100000);
+            }
+            int[] numsSelection = new int[100000];
+            Random rnd1 = new Random();
+            for (int i = 0; i < 100000; i++)
+            {
+                numsSelection[i] = rnd.Next(100000);
+            }
+            int[] numsMerge = new int[100000];
+            Random rnd2 = new Random();
+            for (int i = 0; i < 100000; i++)
+            {
+                numsMerge[i] = rnd.Next(100000);
+            }
+            Console.WriteLine("Timing Different Sorting Algorithms:");
+            Console.WriteLine("Bubble Sort:");
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            Utilities.BubbleSortINT(numsBubble);
+            sw.Stop();
+            Console.WriteLine("Time taken for Bubble Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+
+            sw.Restart();
+            Utilities.SelectionSortINT(numsSelection);
+            sw.Stop();
+            Console.WriteLine("Time taken for Seleciton Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+
+            sw.Restart();
+            Utilities.MergeSort(numsMerge);
+            sw.Stop();
+            Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
         }
     }                              
 }              
