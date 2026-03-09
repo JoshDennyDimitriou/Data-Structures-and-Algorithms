@@ -262,7 +262,10 @@ namespace Data_Structures_and_Algorithms
             string value = Console.ReadLine();
             Student inputStudent = new Student(value);
             Console.WriteLine(inputStudent.StudentStudentID);
+            Console.WriteLine("\nBinary Searching:");
             Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
+            Console.WriteLine("\nLinear Searching:");
+            Console.WriteLine("Searching for " + value + ". Fonud at: " + Utilities.LinearSearch(students, inputStudent));
         }
     }                              
 }              
