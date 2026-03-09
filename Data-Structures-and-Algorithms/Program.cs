@@ -255,15 +255,13 @@ namespace Data_Structures_and_Algorithms
 
             Console.WriteLine("Would you like to see a list of StudentID's? ");
             string ans = Console.ReadLine();
-            ans.ToUpper();
-            if (ans == "Y")
+            if (ans.ToUpper() == "Y")
                 Utilities.PrintStudents(students);
 
             Console.WriteLine("Enter a StudentID to search for:");
             string value = Console.ReadLine();
             Student inputStudent = new Student(value);
-            Console.WriteLine(inputStudent.GetHashCode());
-            Console.WriteLine(stu4.GetHashCode());
+            Console.WriteLine(inputStudent.StudentStudentID);
             Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
         }
     }                              
