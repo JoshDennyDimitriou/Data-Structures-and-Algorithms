@@ -69,7 +69,7 @@ namespace Data_Structures_and_Algorithms
 
         }
         // Partial-args --> Only studentID
-        public Student(string studentID)/* : this(DEF_PROGRAM, DEF_DATE_REGISTERED)*/
+        public Student(string studentID) : this( studentID, DEF_PROGRAM, DEF_DATE_REGISTERED, new Enrollment())
         {
             StudentStudentID = studentID;
         }
