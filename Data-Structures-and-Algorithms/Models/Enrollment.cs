@@ -12,16 +12,16 @@ namespace Data_Structures_and_Algorithms
 {
     class Enrollment
     {
+        // Default values
+        const string DEF_DATE_ENROLLED = "None Provided";
+        const string DEF_GRADE = "None Provided";
+        const string DEF_SEMESTER = "None Provided";
+
         // Instance variables
         private string dateEnrolled;
         private string grade;
         private string semester;
         private Subject subject;
-
-        // Default values
-        const string DEF_DATE_ENROLLED = "None Provided";
-        const string DEF_GRADE = "None Provided";
-        const string DEF_SEMESTER = "None Provided";
 
         // Property Assessor Methods
         public string EnrollmentDateEnrolled

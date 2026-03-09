@@ -13,16 +13,16 @@ namespace Data_Structures_and_Algorithms
 {
     class Student : Person, IComparable<Student>
     {
+        // Default values
+        const string DEF_STUDENT_ID = "None Provided";
+        const string DEF_PROGRAM = "None Provided";
+        const string DEF_DATE_REGISTERED = "None Provided";
+
         // Instance Variables
         private string studentID;
         private string program;
         private string dateRegistered;
         private Enrollment enrollment;
-
-        // Default values
-        const string DEF_STUDENT_ID = "None Provided";
-        const string DEF_PROGRAM = "None Provided";
-        const string DEF_DATE_REGISTERED = "None Provided";
 
         // Property Assessors
         public string StudentStudentID

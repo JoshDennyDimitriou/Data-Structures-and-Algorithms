@@ -12,15 +12,15 @@ namespace Data_Structures_and_Algorithms
 {
     class Subject
     {
-        // Instance Variables
-        private string subjectCode;
-        private string subjectName;
-        private double cost;
-
         // Default Values
         const string DEF_SUBJECT_CODE = "None Provided";
         const string DEF_SUBJECT_NAME = "None Provided";
         const double DEF_COST = -1.00;
+
+        // Instance Variables
+        private string subjectCode;
+        private string subjectName;
+        private double cost;
 
         // Property Assessor Methods
         public string SubjectSubjectCode

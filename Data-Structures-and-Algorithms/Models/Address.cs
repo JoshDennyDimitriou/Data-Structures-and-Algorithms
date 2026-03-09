@@ -12,19 +12,19 @@ namespace Data_Structures_and_Algorithms.Models
 {
     class Address
     {
-        // Instance Variables
-        private string streetNum;
-        private string streetName;
-        private string suburb;
-        private string postcode;
-        private string state;
-
         // Default values
         const string DEF_STREET_NUM = "None Provided";
         const string DEF_STREET_NAME = "None Provided";
         const string DEF_SUBURB = "None Provided";
         const string DEF_POSTCODE = "None Provided";
         const string DEF_STATE = "None Provided";
+
+        // Instance Variables
+        private string streetNum;
+        private string streetName;
+        private string suburb;
+        private string postcode;
+        private string state;
 
         // Property Assessor Methods
         public string AddressStreetNum

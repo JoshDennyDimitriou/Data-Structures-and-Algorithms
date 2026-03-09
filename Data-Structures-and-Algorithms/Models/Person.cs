@@ -12,15 +12,15 @@ namespace Data_Structures_and_Algorithms.Models
 {
     class Person
     {
-        private string name;
-        private string email;
-        private string phoneNumber;
-        private Address address;
-
         // Default Values
         const string DEF_NAME = "None Provided";
         const string DEF_EMAIL = "None Provided";
         const string DEF_PHONE_NUMBER = "None Provided";
+
+        private string name;
+        private string email;
+        private string phoneNumber;
+        private Address address;
 
         // Property Assessor Methods
         public string PersonName
