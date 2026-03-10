@@ -116,5 +116,42 @@ namespace Data_Structures_and_Algorithms.Models
             foreach (Student student in students)
                 Console.Write(student.StudentStudentID + " ");
         }
+
+        // Different Sorting Algorithms for testing
+        public static void BubbleSortINT(int[] myArray)
+        {
+            int temp;
+            for (int j = 0; j < myArray.Length - 1; j++)
+            {
+                for (int i = 0; i < myArray.Length - 1; i++)
+                {
+                    if (myArray[i] > myArray[i + 1])
+                    {
+                        temp = myArray[i + 1];
+                        myArray[i + 1] = myArray[i];
+                        myArray[i] = temp;
+                    }
+                }
+            }
+        }
+        public static void SelectionSortINT(int[] myArray)
+        {
+            int temp, minIndex;
+            for (int i = 0; i < myArray.Length - 1; i++)
+            {
+                minIndex = i;
+                for (int j = 0; j < myArray.Length; j++)
+                {
+                    if (myArray[j] < myArray[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+                temp = myArray[minIndex];
+                myArray[minIndex] = myArray[i];
+                myArray[i] = temp;
+            }
+        }
+
     }
 }
