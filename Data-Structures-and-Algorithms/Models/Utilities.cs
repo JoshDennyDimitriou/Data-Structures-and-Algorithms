@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms.Models
 {
-    class Utilities
+    public class Utilities
     {
         // Linear Search Algorithm
         public static int LinearSearch<T>(T[]myArray, T criteria) where T : IComparable<T>

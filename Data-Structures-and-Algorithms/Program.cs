@@ -270,42 +270,42 @@ namespace Data_Structures_and_Algorithms
 
             // Timing different sorting algos
             // Creating 3 different arrays of random numbers to be sorted
-            int[] numsBubble = new int[100000];
-            Random rnd = new Random();
-            for (int i = 0; i < 100000; i++)
-            {
-                numsBubble[i] = rnd.Next(100000);
-            }
-            int[] numsSelection = new int[100000];
-            Random rnd1 = new Random();
-            for (int i = 0; i < 100000; i++)
-            {
-                numsSelection[i] = rnd.Next(100000);
-            }
-            int[] numsMerge = new int[100000];
-            Random rnd2 = new Random();
-            for (int i = 0; i < 100000; i++)
-            {
-                numsMerge[i] = rnd.Next(100000);
-            }
-            Console.WriteLine("Timing Different Sorting Algorithms:");
-            Console.WriteLine("Bubble Sort:");
+            //int[] numsBubble = new int[100000];
+            //Random rnd = new Random();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    numsBubble[i] = rnd.Next(100000);
+            //}
+            //int[] numsSelection = new int[100000];
+            //Random rnd1 = new Random();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    numsSelection[i] = rnd.Next(100000);
+            //}
+            //int[] numsMerge = new int[100000];
+            //Random rnd2 = new Random();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    numsMerge[i] = rnd.Next(100000);
+            //}
+            //Console.WriteLine("Timing Different Sorting Algorithms:");
+            //Console.WriteLine("Bubble Sort:");
 
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
-            Utilities.BubbleSortINT(numsBubble);
-            sw.Stop();
-            Console.WriteLine("Time taken for Bubble Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+            //Stopwatch sw = new Stopwatch();
+            //sw.Start();
+            //Utilities.BubbleSortINT(numsBubble);
+            //sw.Stop();
+            //Console.WriteLine("Time taken for Bubble Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
 
-            sw.Restart();
-            Utilities.SelectionSortINT(numsSelection);
-            sw.Stop();
-            Console.WriteLine("Time taken for Seleciton Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+            //sw.Restart();
+            //Utilities.SelectionSortINT(numsSelection);
+            //sw.Stop();
+            //Console.WriteLine("Time taken for Seleciton Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
 
-            sw.Restart();
-            Utilities.MergeSort(numsMerge);
-            sw.Stop();
-            Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+            //sw.Restart();
+            //Utilities.MergeSort(numsMerge);
+            //sw.Stop();
+            //Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
         }
     }                              
 }              

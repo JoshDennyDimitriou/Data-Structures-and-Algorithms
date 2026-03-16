@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms
 {
-    class Student : Person, IComparable<Student>
+    public class Student : Person, IComparable<Student>
     {
         // Default values
         const string DEF_STUDENT_ID = "None Provided";
@@ -153,19 +153,19 @@ namespace Data_Structures_and_Algorithms
         }
 
         // StudentID HashCode CompareTo
-        //public int CompareTo(Student other)
-        //{
-        //    if (other == null)
-        //        return 1;
-        //    return this.GetHashCode().CompareTo(other.GetHashCode());
-        //}
-
-        // StudentID CompareTo
         public int CompareTo(Student other)
         {
             if (other == null)
                 return 1;
-            return this.StudentStudentID.CompareTo(other.StudentStudentID);
+            return this.GetHashCode().CompareTo(other.GetHashCode());
         }
+
+        // StudentID CompareTo
+        //public int CompareTo(Student other)
+        //{
+        //    if (other == null)
+        //        return 1;
+        //    return this.StudentStudentID.CompareTo(other.StudentStudentID);
+        //}
     }
 }
