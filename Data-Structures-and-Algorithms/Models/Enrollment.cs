@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms
 {
-    class Enrollment
+    public class Enrollment
     {
         // Default values
         const string DEF_DATE_ENROLLED = "None Provided";

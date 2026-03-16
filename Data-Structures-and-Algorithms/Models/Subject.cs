@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms
 {
-    class Subject
+    public class Subject
     {
         // Default Values
         const string DEF_SUBJECT_CODE = "None Provided";

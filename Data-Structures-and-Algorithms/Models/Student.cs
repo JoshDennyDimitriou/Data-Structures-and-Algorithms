@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms
 {
-    class Student : Person, IComparable<Student>
+    public class Student : Person, IComparable<Student>
     {
         // Default values
         const string DEF_STUDENT_ID = "None Provided";

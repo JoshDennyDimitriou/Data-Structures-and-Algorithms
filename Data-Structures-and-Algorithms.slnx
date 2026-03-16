@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Data-Structures-and-Algorithms/Data-Structures-and-Algorithms.csproj" Id="ea542e33-0187-45b5-aac1-73d60f094a65" />
+  <Project Path="Testing/Testing.csproj" Id="4be68fbf-77e6-4336-b1e5-7c575d0c5261" />
 </Solution>
