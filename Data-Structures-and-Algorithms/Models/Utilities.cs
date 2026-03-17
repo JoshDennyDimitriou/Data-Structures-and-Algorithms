@@ -11,6 +11,15 @@ namespace Data_Structures_and_Algorithms.Models
     public class Utilities
     {
         // Linear Search Algorithm
+        /// <summary>
+        /// Linear search takes in an array and a search criteria, it then iterates through the
+        /// array one by one till it finds the criteria or reaches the end of the array.
+        /// Linear Search works on both sorted and unsorted arrays.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="myArray"></param>
+        /// <param name="criteria"></param>
+        /// <returns>The Criteria's index if found and -1 if not found</returns>
         public static int LinearSearch<T>(T[]myArray, T criteria) where T : IComparable<T>
         {
             int i = 0;
@@ -29,6 +38,16 @@ namespace Data_Structures_and_Algorithms.Models
         }
 
         // Binary Search Algorithm
+        /// <summary>
+        /// Binary Search takes in an array and a search criteria, it looks at the middle of the
+        /// array and determines whether the criteria is in the right or left half of the array,
+        /// it then cuts out the other half of the array and repeats the process.
+        /// Binary Search only works on a sorted array.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="myArray"></param>
+        /// <param name="criteria"></param>
+        /// <returns>The Criteria's index if found and -1 if not found</returns>
         public static int BinarySearch<T>(T[] myArray, T criteria) where T : IComparable<T>
         {
             int min = 0;
@@ -48,7 +67,11 @@ namespace Data_Structures_and_Algorithms.Models
             return - 1;
         }
         /// <summary>
-        /// Takes in an array, and an order direction as an int, 1 for Ascending, any other number for Descending.
+        /// Merge sort takes in an array and an order direction. It will then recursively split the
+        /// array up into many subarrays, until each subarray only consists of 1 value. It then merges
+        /// them together while sorting the array subarray by subarray.
+        /// Order will define the sorting order as either Ascending or Descending: 1 for Ascending and -1 for descending.
+        /// If any other order is input, it will default to Ascending.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="myArray"></param>
@@ -68,8 +91,10 @@ namespace Data_Structures_and_Algorithms.Models
                 SortArray(myArray, middle + 1, right, order);
                 if (order == 1)
                     MergeAsc(myArray, left, middle, right);
-                else
+                else if (order == -1)
                     MergeDesc(myArray, left, middle, right);
+                else
+                    MergeAsc(myArray, left, middle, right);
             }
         }
         private static void MergeAsc<T>(T[] myArray, int left, int middle, int right) where T : IComparable<T>
