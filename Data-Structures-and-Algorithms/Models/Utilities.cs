@@ -47,24 +47,32 @@ namespace Data_Structures_and_Algorithms.Models
             } while (mid <= max);
             return - 1;
         }
-
-        public static void MergeSort<T>(T[] myArray) where T : IComparable<T>
+        /// <summary>
+        /// Takes in an array, and an order direction as an int, 1 for Ascending, any other number for Descending.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="myArray"></param>
+        /// <param name="order"></param>
+        public static void MergeSort<T>(T[] myArray, int order) where T : IComparable<T>
         {
             if (myArray == null || myArray.Length <= 1)
                 return;
-            SortArray(myArray, 0, myArray.Length - 1);
+            SortArray(myArray, 0, myArray.Length - 1, order);
         }
-        private static void SortArray<T>(T[] myArray, int left, int right) where T : IComparable<T>
+        private static void SortArray<T>(T[] myArray, int left, int right, int order) where T : IComparable<T>
         {
             if (left < right)
             {
                 int middle = (left + right) / 2;
-                SortArray(myArray, left, middle);
-                SortArray(myArray, middle + 1, right);
-                Merge(myArray, left, middle, right);
+                SortArray(myArray, left, middle, order);
+                SortArray(myArray, middle + 1, right, order);
+                if (order == 1)
+                    MergeAsc(myArray, left, middle, right);
+                else
+                    MergeDesc(myArray, left, middle, right);
             }
         }
-        private static void Merge<T>(T[] myArray, int left, int middle, int right) where T : IComparable<T>
+        private static void MergeAsc<T>(T[] myArray, int left, int middle, int right) where T : IComparable<T>
         {
             int leftPointer = left;
             int rightPointer = middle + 1;
@@ -75,6 +83,37 @@ namespace Data_Structures_and_Algorithms.Models
             while (leftPointer <= middle && rightPointer <= right)
             {
                 if (myArray[leftPointer].CompareTo(myArray[rightPointer]) <= 0)
+                    temp[position++] = myArray[leftPointer++];
+                else
+                    temp[position++] = myArray[rightPointer++];
+            }
+
+            while (leftPointer <= middle)
+            {
+                temp[position++] = myArray[leftPointer++];
+            }
+
+            while (rightPointer <= right)
+            {
+                temp[position++] = myArray[rightPointer++];
+            }
+
+            for (int i = 0; i < temp.Length; i++)
+            {
+                myArray[left + i] = temp[i];
+            }
+        }
+        private static void MergeDesc<T>(T[] myArray, int left, int middle, int right) where T : IComparable<T>
+        {
+            int leftPointer = left;
+            int rightPointer = middle + 1;
+            int position = 0;
+
+            T[] temp = new T[right - left + 1];
+
+            while (leftPointer <= middle && rightPointer <= right)
+            {
+                if (myArray[leftPointer].CompareTo(myArray[rightPointer]) >= 0)
                     temp[position++] = myArray[leftPointer++];
                 else
                     temp[position++] = myArray[rightPointer++];

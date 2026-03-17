@@ -214,7 +214,7 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Original Scores array:");
             Utilities.PrintArray(scores);
             Console.WriteLine("Sorting Array:");
-            Utilities.MergeSort(scores);
+            Utilities.MergeSort(scores, 1);
             Utilities.PrintArray(scores);
             Console.WriteLine("Linear Search:");
             Console.WriteLine("Searching 34: " + Utilities.LinearSearch(scores, 34));
@@ -228,7 +228,7 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Original Students Array");
             Utilities.PrintArray(stringArray);
             Console.WriteLine("Sorting Array:");
-            Utilities.MergeSort(stringArray);
+            Utilities.MergeSort(stringArray, 1);
             Utilities.PrintArray(stringArray);
             Console.WriteLine("Linear Search:");
             Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(stringArray, "Perth"));
@@ -247,12 +247,12 @@ namespace Data_Structures_and_Algorithms
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
             Console.WriteLine("\nMerge Sorting Students based on StudentID hashcode");
-            Utilities.MergeSort(students);
+            Utilities.MergeSort(students, -1);
             Console.Write("StudentID: ");
             Utilities.PrintStudents(students);
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
-            Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
+            //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
             //Console.WriteLine("Would you like to see a list of StudentID's? ");
             //string ans = Console.ReadLine();
