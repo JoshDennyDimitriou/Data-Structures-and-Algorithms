@@ -8,7 +8,7 @@ namespace Testing
         private Student stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu9, stu10;
         // Creating a fake stu11 so there are no build errors. stu11 will not be added to either array
         private Student stu11;
-        private Student[] studentArr1, studentArr2;
+        private Student[] studentArrOrdered, studentArrUnordered1, studentArrUnordered2;
 
         [OneTimeSetUp]
         public void Setup()
@@ -32,49 +32,50 @@ namespace Testing
 
 
             // Creating 2 arrays for the Merge Sort Methods, studentArr1 will be used for all searching tests.
-            studentArr1 = new Student[] {stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3};
-            studentArr2 = new Student[] { stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3 };
+            studentArrOrdered = new Student[] {stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu9, stu10};
+            //studentArr2 = new Student[] { stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3 };
         }
 
         // Test 1 - Testing Linear Search Found on studentArr1
         [Test]
         public void LinearSearchFound()
         {
-            Assert.That(Utilities.LinearSearch(studentArr1, stu4), Is.EqualTo(1));
+            Assert.That(Utilities.LinearSearch(studentArrOrdered, stu4), Is.EqualTo(1));
         }
 
         // Test 2 - Testing Linear Search Not Found on studentArr1
         [Test]
         public void LinearSearchNotFound()
         {
-            Assert.That(Utilities.LinearSearch(studentArr1, stu11), Is.EqualTo(-1));
+            Assert.That(Utilities.LinearSearch(studentArrOrdered, stu11), Is.EqualTo(-1));
         }
 
-        // **********Need to sort the arrays before the Binary Search testing**********
-        // Test 3 - Testing Merge Sort Ascending on studentArr1
+        // Test 3 - Testing Binary Search Found on studentArr1
+        [Test]
+        public void BinarySearchFound()
+        {
+            Student[] studentArr3 = { stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3 };
+            Utilities.MergeSort(studentArr3);
+            Assert.That(Utilities.BinarySearch(studentArr3, stu1), Is.EqualTo(0));
+        }
+
+        // Test 4 - Testing Binary Search Not Found on studentArr1
+        [Test]
+        public void BinarySearchNotFound()
+        {
+            Assert.Pass();
+        }
+
+        // Test 5 - Testing Merge Sort Ascending on studentArr1
         [Test]
         public void MergeSortAsc()
         {
             Assert.Pass();
         }
 
-        // Test 4 - Testing Merge Sort Descending on studentArr2
+        // Test 6 - Testing Merge Sort Descending on studentArr2
         [Test]
         public void MergeSortDesc()
-        {
-            Assert.Pass();
-        }
-
-        // Test 5 - Testing Binary Search Found on studentArr1
-        [Test]
-        public void BinarySearchFound()
-        {
-            Assert.Pass();
-        }
-
-        // Test 6 - Testing Binary Search Not Found on studentArr1
-        [Test]
-        public void BinarySearchNotFound()
         {
             Assert.Pass();
         }

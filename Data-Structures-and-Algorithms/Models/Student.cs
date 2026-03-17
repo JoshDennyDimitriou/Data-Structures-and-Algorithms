@@ -66,17 +66,14 @@ namespace Data_Structures_and_Algorithms
         // All-args --> Address
         public Student(string studentID, string program, string dateRegistered) : this(studentID, program, dateRegistered, new Enrollment())
         {
-
         }
         // Partial-args --> Only studentID
-        public Student(string studentID) : this( studentID, DEF_PROGRAM, DEF_DATE_REGISTERED, new Enrollment())
+        public Student(string studentID) : this(studentID, DEF_PROGRAM, DEF_DATE_REGISTERED, new Enrollment())
         {
-            StudentStudentID = studentID;
         }
         // No-args
         public Student() : this(DEF_STUDENT_ID, DEF_PROGRAM, DEF_DATE_REGISTERED)
         {
-
         }
 
         /// <summary>
@@ -89,7 +86,7 @@ namespace Data_Structures_and_Algorithms
                 "\nProgram: " + StudentProgram +
                 "\nDate Registered:" + StudentDateRegistered +
                 "\nEnrollment: [\n" + StudentEnrollment + "\n\t\t]";
-         }
+        }
 
         /// <summary>
         /// An override of the default Equals method
@@ -113,7 +110,7 @@ namespace Data_Structures_and_Algorithms
         /// <param name="stu1">Object - Student 1</param>
         /// <param name="stu2">Object - Student 2</param>
         /// <returns></returns>
-        public static bool operator == (Student stu1, Student stu2)
+        public static bool operator ==(Student stu1, Student stu2)
         {
             return object.Equals(stu1, stu2);
         }
@@ -123,7 +120,7 @@ namespace Data_Structures_and_Algorithms
         /// <param name="stu1">Object - Student 1</param>
         /// <param name="stu2">Object - Student 2</param>
         /// <returns></returns>
-        public static bool operator != (Student stu1, Student stu2)
+        public static bool operator !=(Student stu1, Student stu2)
         {
             return !object.Equals(stu1, stu2);
         }

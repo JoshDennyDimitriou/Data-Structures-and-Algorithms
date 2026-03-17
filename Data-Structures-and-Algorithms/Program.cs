@@ -220,7 +220,7 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Searching 34: " + Utilities.LinearSearch(scores, 34));
             Console.WriteLine("Binary Search:");
             Console.WriteLine("Searching 109: " + Utilities.BinarySearch(scores, 109));
-            Console.WriteLine("Searching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " Binary -> " + Utilities.BinarySearch(scores, 11));
+            Console.WriteLine("Searching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " || Binary -> " + Utilities.BinarySearch(scores, 11));
 
             Console.WriteLine();
 
@@ -234,7 +234,7 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(stringArray, "Perth"));
             Console.WriteLine("Binary Search:");
             Console.WriteLine("Searching Sydney: " + Utilities.BinarySearch(stringArray, "Sydney"));
-            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
+            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " || Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
 
 
             Console.WriteLine();
@@ -246,13 +246,13 @@ namespace Data_Structures_and_Algorithms
             Utilities.PrintStudents(students);
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
-            Console.WriteLine("Merge Sorting Students based on StudentID hashcode");
+            Console.WriteLine("\nMerge Sorting Students based on StudentID hashcode");
             Utilities.MergeSort(students);
             Console.Write("StudentID: ");
             Utilities.PrintStudents(students);
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
-            Console.WriteLine("Searching for Student 1: " + Utilities.BinarySearch(students, stu1));
+            Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
             //Console.WriteLine("Would you like to see a list of StudentID's? ");
             //string ans = Console.ReadLine();
