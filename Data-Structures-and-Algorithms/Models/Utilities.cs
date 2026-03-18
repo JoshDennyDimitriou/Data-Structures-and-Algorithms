@@ -63,7 +63,7 @@ namespace Data_Structures_and_Algorithms.Models
                     min = mid + 1;
                 else
                     max = mid - 1;
-            } while (mid <= max);
+            } while (min <= max);
             return - 1;
         }
         /// <summary>
