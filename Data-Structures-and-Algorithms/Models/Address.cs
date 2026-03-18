@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms.Models
 {
-    class Address
+    public class Address
     {
         // Default values
         const string DEF_STREET_NUM = "None Provided";

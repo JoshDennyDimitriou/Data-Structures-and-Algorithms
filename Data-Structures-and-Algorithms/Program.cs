@@ -214,13 +214,13 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Original Scores array:");
             Utilities.PrintArray(scores);
             Console.WriteLine("Sorting Array:");
-            Utilities.MergeSort(scores);
+            Utilities.MergeSort(scores, 1);
             Utilities.PrintArray(scores);
             Console.WriteLine("Linear Search:");
             Console.WriteLine("Searching 34: " + Utilities.LinearSearch(scores, 34));
             Console.WriteLine("Binary Search:");
             Console.WriteLine("Searching 109: " + Utilities.BinarySearch(scores, 109));
-            Console.WriteLine("Searching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " Binary -> " + Utilities.BinarySearch(scores, 11));
+            Console.WriteLine("Searching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " || Binary -> " + Utilities.BinarySearch(scores, 11));
 
             Console.WriteLine();
 
@@ -228,13 +228,13 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Original Students Array");
             Utilities.PrintArray(stringArray);
             Console.WriteLine("Sorting Array:");
-            Utilities.MergeSort(stringArray);
+            Utilities.MergeSort(stringArray, 1);
             Utilities.PrintArray(stringArray);
             Console.WriteLine("Linear Search:");
             Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(stringArray, "Perth"));
             Console.WriteLine("Binary Search:");
             Console.WriteLine("Searching Sydney: " + Utilities.BinarySearch(stringArray, "Sydney"));
-            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
+            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " || Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
 
 
             Console.WriteLine();
@@ -246,27 +246,70 @@ namespace Data_Structures_and_Algorithms
             Utilities.PrintStudents(students);
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
-            Console.WriteLine("Merge Sorting Students based on StudentID hashcode");
-            Utilities.MergeSort(students);
+            Console.WriteLine("\nMerge Sorting Students based on StudentID hashcode");
+            Utilities.MergeSort(students, -1);
             Console.Write("StudentID: ");
             Utilities.PrintStudents(students);
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
-            Console.WriteLine("Searching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
-            Console.WriteLine("Would you like to see a list of StudentID's? ");
-            string ans = Console.ReadLine();
-            if (ans.ToUpper() == "Y")
-                Utilities.PrintStudents(students);
+            Console.WriteLine("\n\nTesting Not Found Binary");
+            Student stu11 = new Student();
+            Console.WriteLine("Searching for stu11: " + Utilities.BinarySearch(students, stu11));
+            //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
-            Console.WriteLine("Enter a StudentID to search for:");
-            string value = Console.ReadLine();
-            Student inputStudent = new Student(value);
-            Console.WriteLine(inputStudent.StudentStudentID);
-            Console.WriteLine("\nBinary Searching:");
-            Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
-            Console.WriteLine("\nLinear Searching:");
-            Console.WriteLine("Searching for " + value + ". Fonud at: " + Utilities.LinearSearch(students, inputStudent));
+            //Console.WriteLine("Would you like to see a list of StudentID's? ");
+            //string ans = Console.ReadLine();
+            //if (ans.ToUpper() == "Y")
+            //    Utilities.PrintStudents(students);
+
+            //Console.WriteLine("Enter a StudentID to search for:");
+            //string value = Console.ReadLine();
+            //Student inputStudent = new Student(value);
+            //Console.WriteLine(inputStudent.StudentStudentID);
+            //Console.WriteLine("\nBinary Searching:");
+            //Console.WriteLine("Searching for " + value + ". Found at: " + Utilities.BinarySearch(students, inputStudent));
+            //Console.WriteLine("\nLinear Searching:");
+            //Console.WriteLine("Searching for " + value + ". Fonud at: " + Utilities.LinearSearch(students, inputStudent));
+
+            // Timing different sorting algos
+            // Creating 3 different arrays of random numbers to be sorted
+            //int[] numsBubble = new int[100000];
+            //Random rnd = new Random();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    numsBubble[i] = rnd.Next(100000);
+            //}
+            //int[] numsSelection = new int[100000];
+            //Random rnd1 = new Random();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    numsSelection[i] = rnd.Next(100000);
+            //}
+            //int[] numsMerge = new int[100000];
+            //Random rnd2 = new Random();
+            //for (int i = 0; i < 100000; i++)
+            //{
+            //    numsMerge[i] = rnd.Next(100000);
+            //}
+            //Console.WriteLine("Timing Different Sorting Algorithms:");
+            //Console.WriteLine("Bubble Sort:");
+
+            //Stopwatch sw = new Stopwatch();
+            //sw.Start();
+            //Utilities.BubbleSortINT(numsBubble);
+            //sw.Stop();
+            //Console.WriteLine("Time taken for Bubble Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+
+            //sw.Restart();
+            //Utilities.SelectionSortINT(numsSelection);
+            //sw.Stop();
+            //Console.WriteLine("Time taken for Seleciton Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
+
+            //sw.Restart();
+            //Utilities.MergeSort(numsMerge);
+            //sw.Stop();
+            //Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
         }
     }                              
 }              
