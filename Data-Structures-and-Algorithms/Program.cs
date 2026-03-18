@@ -252,6 +252,10 @@ namespace Data_Structures_and_Algorithms
             Utilities.PrintStudents(students);
             Console.Write("\nHashCode: ");
             Utilities.PrintArray(students);
+
+            Console.WriteLine("\n\nTesting Not Found Binary");
+            Student stu11 = new Student();
+            Console.WriteLine("Searching for stu11: " + Utilities.BinarySearch(students, stu11));
             //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
             //Console.WriteLine("Would you like to see a list of StudentID's? ");

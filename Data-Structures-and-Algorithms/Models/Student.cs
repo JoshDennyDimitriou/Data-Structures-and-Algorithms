@@ -149,20 +149,12 @@ namespace Data_Structures_and_Algorithms
             return this.StudentStudentID.GetHashCode();
         }
 
-        // StudentID HashCode CompareTo
+        // StudentID CompareTo
         public int CompareTo(Student other)
         {
             if (other == null)
                 return 1;
-            return this.GetHashCode().CompareTo(other.GetHashCode());
+            return this.StudentStudentID.CompareTo(other.StudentStudentID);
         }
-
-        // StudentID CompareTo
-        //public int CompareTo(Student other)
-        //{
-        //    if (other == null)
-        //        return 1;
-        //    return this.StudentStudentID.CompareTo(other.StudentStudentID);
-        //}
     }
 }
