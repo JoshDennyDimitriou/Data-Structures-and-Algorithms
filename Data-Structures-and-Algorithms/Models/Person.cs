@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms.Models
 {
-    class Person
+    public class Person
     {
         // Default Values
         const string DEF_NAME = "None Provided";
