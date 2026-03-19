@@ -10,6 +10,27 @@ namespace Data_Structures_and_Algorithms.Models
 {
     public class Utilities
     {
+        // **********Psuedocode for Linear Search**********
+        // 
+        // take in an array myArray
+        // take in a value criteria
+        // 
+        // declare int i
+        // declare boolean found
+        // 
+        // while not found and i less than array length
+        //    if criteria is equal to value at array i
+        //        found equals true
+        //    else
+        //        increase i by 1
+        // END while
+        // if i is less than arrays length
+        //    return i
+        // else
+        //    return -1
+        // 
+        // *****************Psuedocode END*****************
+
         // Linear Search Algorithm
         /// <summary>
         /// Linear search takes in an array and a search criteria, it then iterates through the
@@ -36,6 +57,28 @@ namespace Data_Structures_and_Algorithms.Models
             else
                 return -1;
         }
+
+        // **********Psuedocode for Binary Search**********
+        // 
+        // take in an array myArray
+        // take in a value criteria
+        // 
+        // declare int min
+        // declare int max
+        // declare int mid
+        // 
+        // do
+        //    mid equals (min + max) divided by 2
+        //    if array at index mid compared to criteria is 0
+        //        return mid
+        //    if criteria compared to array at index mid is greater than 0
+        //        min equals mid minus 1
+        //    else
+        //        max equals mid minus 1
+        // while min is less than or equal to max
+        // return -1 if not found
+        // 
+        // *****************Psuedocode END*****************
 
         // Binary Search Algorithm
         /// <summary>
