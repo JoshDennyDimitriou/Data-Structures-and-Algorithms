@@ -237,25 +237,25 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " || Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
 
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            stu5.StudentStudentID = "001234567";
-            Console.WriteLine("Printing an Array of Students");
-            Student[] students = { stu1, stu2, stu3, stu4, stu5, stu6 };
-            Console.Write("StudentID: ");
-            Utilities.PrintStudents(students);
-            Console.Write("\nHashCode: ");
-            Utilities.PrintArray(students);
-            Console.WriteLine("\nMerge Sorting Students based on StudentID hashcode");
-            Utilities.MergeSort(students, -1);
-            Console.Write("StudentID: ");
-            Utilities.PrintStudents(students);
-            Console.Write("\nHashCode: ");
-            Utilities.PrintArray(students);
+            //stu5.StudentStudentID = "001234567";
+            //Console.WriteLine("Printing an Array of Students");
+            //Student[] students = { stu1, stu2, stu3, stu4, stu5, stu6 };
+            //Console.Write("StudentID: ");
+            //Utilities.PrintStudents(students);
+            //Console.Write("\nHashCode: ");
+            //Utilities.PrintArray(students);
+            //Console.WriteLine("\nMerge Sorting Students based on StudentID hashcode");
+            //Utilities.MergeSort(students, -1);
+            //Console.Write("StudentID: ");
+            //Utilities.PrintStudents(students);
+            //Console.Write("\nHashCode: ");
+            //Utilities.PrintArray(students);
 
-            Console.WriteLine("\n\nTesting Not Found Binary");
-            Student stu11 = new Student();
-            Console.WriteLine("Searching for stu11: " + Utilities.BinarySearch(students, stu11));
+            //Console.WriteLine("\n\nTesting Not Found Binary");
+            //Student stu11 = new Student();
+            //Console.WriteLine("Searching for stu11: " + Utilities.BinarySearch(students, stu11));
             //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
             //Console.WriteLine("Would you like to see a list of StudentID's? ");
@@ -272,8 +272,8 @@ namespace Data_Structures_and_Algorithms
             //Console.WriteLine("\nLinear Searching:");
             //Console.WriteLine("Searching for " + value + ". Fonud at: " + Utilities.LinearSearch(students, inputStudent));
 
-            // Timing different sorting algos
-            // Creating 3 different arrays of random numbers to be sorted
+            //// Timing different sorting algos
+            //// Creating 3 different arrays of random numbers to be sorted
             //int[] numsBubble = new int[100000];
             //Random rnd = new Random();
             //for (int i = 0; i < 100000; i++)
@@ -297,17 +297,17 @@ namespace Data_Structures_and_Algorithms
 
             //Stopwatch sw = new Stopwatch();
             //sw.Start();
-            //Utilities.BubbleSortINT(numsBubble);
+            //Utilities.BubbleSort(numsBubble);
             //sw.Stop();
             //Console.WriteLine("Time taken for Bubble Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
 
             //sw.Restart();
-            //Utilities.SelectionSortINT(numsSelection);
+            //Utilities.SelectionSort(numsSelection);
             //sw.Stop();
             //Console.WriteLine("Time taken for Seleciton Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
 
             //sw.Restart();
-            //Utilities.MergeSort(numsMerge);
+            //Utilities.MergeSort(numsMerge, 1);
             //sw.Stop();
             //Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
         }

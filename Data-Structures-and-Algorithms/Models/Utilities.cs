@@ -20,7 +20,7 @@ namespace Data_Structures_and_Algorithms.Models
         /// <param name="myArray"></param>
         /// <param name="criteria"></param>
         /// <returns>The Criteria's index if found and -1 if not found</returns>
-        public static int LinearSearch<T>(T[]myArray, T criteria) where T : IComparable<T>
+        public static int LinearSearch<T>(T[] myArray, T criteria) where T : IComparable<T>
         {
             int i = 0;
             bool found = false;
@@ -64,7 +64,7 @@ namespace Data_Structures_and_Algorithms.Models
                 else
                     max = mid - 1;
             } while (min <= max);
-            return - 1;
+            return -1;
         }
         /// <summary>
         /// Merge sort takes in an array and an order direction. It will then recursively split the
@@ -182,14 +182,14 @@ namespace Data_Structures_and_Algorithms.Models
         }
 
         // Different Sorting Algorithms for testing
-        public static void BubbleSortINT(int[] myArray)
+        public static void BubbleSort<T>(T[] myArray) where T : IComparable
         {
-            int temp;
+            T temp;
             for (int j = 0; j < myArray.Length - 1; j++)
             {
                 for (int i = 0; i < myArray.Length - 1; i++)
                 {
-                    if (myArray[i] > myArray[i + 1])
+                    if (myArray[i].CompareTo(myArray[i + 1]) > 0)
                     {
                         temp = myArray[i + 1];
                         myArray[i + 1] = myArray[i];
@@ -198,15 +198,18 @@ namespace Data_Structures_and_Algorithms.Models
                 }
             }
         }
-        public static void SelectionSortINT(int[] myArray)
+
+        public static void SelectionSort<T>(T[] myArray) where T : IComparable
         {
-            int temp, minIndex;
+            int minIndex;
+            T temp;
+
             for (int i = 0; i < myArray.Length - 1; i++)
             {
                 minIndex = i;
                 for (int j = 0; j < myArray.Length; j++)
                 {
-                    if (myArray[j] < myArray[minIndex])
+                    if (myArray[j].CompareTo(myArray[minIndex]) < 0)
                     {
                         minIndex = j;
                     }
@@ -216,6 +219,5 @@ namespace Data_Structures_and_Algorithms.Models
                 myArray[i] = temp;
             }
         }
-
     }
 }
