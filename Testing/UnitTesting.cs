@@ -32,15 +32,15 @@ namespace Testing
             stu11 = new Student();
 
             // studentArrOrdered is only ordered by variable name, not by studentID
-            studentArrOrdered = new Student[] { stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu9, stu10 };
+            studentArrOrdered = [stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu9, stu10];
             // studentArrUnordered1 will be used for Merge Sort Ascending
-            studentArrUnordered1 = new Student[] { stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3 };
+            studentArrUnordered1 = [stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3];
             // studentArrUnordered2 will be used for Merge Sort Descending
-            studentArrUnordered2 = new Student[] { stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3 };
+            studentArrUnordered2 = [stu5, stu4, stu7, stu1, stu6, stu9, stu2, stu10, stu8, stu3];
             // studentArrIdOrderedAsc will be ordered by studentID ascending to check against the Merge Sort Ascending
-            studentArrIdOrderedAsc = new Student[] { stu1, stu9, stu2, stu3, stu5, stu7, stu6, stu10, stu4, stu8};
+            studentArrIdOrderedAsc = [stu1, stu9, stu2, stu3, stu5, stu7, stu6, stu10, stu4, stu8];
             // studentArrIdOrderedDesc will be ordered by studentID descending to check against the Merge Sort Descending
-            studentArrIdOrderedDesc = new Student[] { stu8, stu4, stu10, stu6, stu7, stu5, stu3, stu2, stu9, stu1 };
+            studentArrIdOrderedDesc = [stu8, stu4, stu10, stu6, stu7, stu5, stu3, stu2, stu9, stu1];
         }
 
         // Test 1 - Testing Linear Search Found on studentArr1 -> using stu4

@@ -213,7 +213,7 @@ namespace Data_Structures_and_Algorithms
             int[] scores = { 2, 5, 26, 4, 64, 1, 34, 25, 63, 91, 109, 24, 31, 45, 12 };
             Console.WriteLine("Original Scores array:");
             Utilities.PrintArray(scores);
-            Console.WriteLine("Sorting Array:");
+            Console.WriteLine("Sorting Scores Array:");
             Utilities.MergeSort(scores, 1);
             Utilities.PrintArray(scores);
             Console.WriteLine("Linear Search:");
@@ -224,17 +224,17 @@ namespace Data_Structures_and_Algorithms
 
             Console.WriteLine();
 
-            string[] stringArray = { "Adelaide", "Perth", "Melbourne", "Brisbane", "Sydney"};
-            Console.WriteLine("Original Students Array");
-            Utilities.PrintArray(stringArray);
+            string[] cities = { "Adelaide", "Perth", "Melbourne", "Brisbane", "Sydney"};
+            Console.WriteLine("Original Cities Array");
+            Utilities.PrintArray(cities);
             Console.WriteLine("Sorting Array:");
-            Utilities.MergeSort(stringArray, 1);
-            Utilities.PrintArray(stringArray);
+            Utilities.MergeSort(cities, 1);
+            Utilities.PrintArray(cities);
             Console.WriteLine("Linear Search:");
-            Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(stringArray, "Perth"));
+            Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(cities, "Perth"));
             Console.WriteLine("Binary Search:");
-            Console.WriteLine("Searching Sydney: " + Utilities.BinarySearch(stringArray, "Sydney"));
-            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(stringArray, "Hobart") + " || Binary -> " + Utilities.BinarySearch(stringArray, "Hobart"));
+            Console.WriteLine("Searching Sydney: " + Utilities.BinarySearch(cities, "Sydney"));
+            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(cities, "Hobart") + " || Binary -> " + Utilities.BinarySearch(cities, "Hobart"));
 
 
             Console.WriteLine();
@@ -242,20 +242,13 @@ namespace Data_Structures_and_Algorithms
             stu5.StudentStudentID = "001234567";
             Console.WriteLine("Printing an Array of Students");
             Student[] students = { stu1, stu2, stu3, stu4, stu5, stu6 };
-            Console.Write("StudentID: ");
+            Console.WriteLine("Original Student Array");
             Utilities.PrintStudents(students);
-            Console.Write("\nHashCode: ");
-            Utilities.PrintArray(students);
-            Console.WriteLine("\nMerge Sorting Students based on StudentID hashcode");
-            Utilities.MergeSort(students, -1);
-            Console.Write("StudentID: ");
+            Console.WriteLine("\nMerge Sorting Students based on StudentID");
+            Utilities.MergeSort(students, 1);
             Utilities.PrintStudents(students);
-            Console.Write("\nHashCode: ");
-            Utilities.PrintArray(students);
 
-            Console.WriteLine("\n\nTesting Not Found Binary");
-            Student stu11 = new Student();
-            Console.WriteLine("Searching for stu11: " + Utilities.BinarySearch(students, stu11));
+            // Allowing a user to search for a Student
             //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
 
             //Console.WriteLine("Would you like to see a list of StudentID's? ");

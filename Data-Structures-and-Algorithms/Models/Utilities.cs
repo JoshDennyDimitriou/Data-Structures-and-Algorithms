@@ -41,7 +41,7 @@ namespace Data_Structures_and_Algorithms.Models
         /// <param name="myArray"></param>
         /// <param name="criteria"></param>
         /// <returns>The Criteria's index if found and -1 if not found</returns>
-        public static int LinearSearch<T>(T[]myArray, T criteria) where T : IComparable<T>
+        public static int LinearSearch<T>(T[] myArray, T criteria) where T : IComparable<T>
         {
             int i = 0;
             bool found = false;
@@ -107,7 +107,7 @@ namespace Data_Structures_and_Algorithms.Models
                 else
                     max = mid - 1;
             } while (min <= max);
-            return - 1;
+            return -1;
         }
         /// <summary>
         /// Merge sort takes in an array and an order direction. It will then recursively split the
@@ -209,17 +209,12 @@ namespace Data_Structures_and_Algorithms.Models
             Console.WriteLine("Array output:");
             foreach (T item in myArray)
             {
-                if (item is Student)
-                    Console.Write(item.GetHashCode() + " ");
-                else
-                    Console.Write(item + " ");
+                Console.Write(item + " ");
             }
         }
 
         public static void PrintStudents(Student[] students)
         {
-            Console.WriteLine();
-            Console.WriteLine("Student Array Output:");
             foreach (Student student in students)
                 Console.Write(student.StudentStudentID + " ");
         }
