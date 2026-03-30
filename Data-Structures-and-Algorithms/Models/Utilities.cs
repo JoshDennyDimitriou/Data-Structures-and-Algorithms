@@ -132,9 +132,7 @@ namespace Data_Structures_and_Algorithms.Models
                 int middle = (left + right) / 2;
                 SortArray(myArray, left, middle, order);
                 SortArray(myArray, middle + 1, right, order);
-                if (order == 1)
-                    MergeAsc(myArray, left, middle, right);
-                else if (order == -1)
+                if (order == -1)
                     MergeDesc(myArray, left, middle, right);
                 else
                     MergeAsc(myArray, left, middle, right);
