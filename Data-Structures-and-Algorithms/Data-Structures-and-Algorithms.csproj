@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\LinkedListNode.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\SingleLinkedList.cs" />
     <Compile Include="Models\Utilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
