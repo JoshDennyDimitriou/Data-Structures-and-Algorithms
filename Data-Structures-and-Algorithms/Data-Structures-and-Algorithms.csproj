@@ -44,9 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BinaryTree.cs" />
+    <Compile Include="Models\DoubleLinkedList.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\LinkedListNode.cs" />
+    <Compile Include="Models\Node.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\SingleLinkedList.cs" />
     <Compile Include="Models\Utilities.cs" />
