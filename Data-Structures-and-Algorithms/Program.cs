@@ -197,6 +197,27 @@ namespace Data_Structures_and_Algorithms
 
             Console.WriteLine();
 
+            Student stu7 = new Student("0111");
+            Student stu8 = new Student("1222");
+            
+            Console.WriteLine("Testing <, >, <= and >= operators:");
+            Console.WriteLine("Creating Student 7 with ID: '0111' and Student 8 with ID: '1222'");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Student 7 < Student 8 -- True: " + (stu7 < stu8));
+            Console.WriteLine("Student 8 < Student 7 -- False: " + (stu7 > stu8));
+            Console.WriteLine("Student 8 > Student 7 -- True: " + (stu8 > stu7));
+            Console.WriteLine("Student 7 > Student 8 -- False: " + (stu7 > stu8));
+            Console.WriteLine("Student 7 <= Student 7 -- True: " + (stu7 <= stu7));
+            Console.WriteLine("Student 7 <= Student 8 -- True: " + (stu7 <= stu8));
+            Console.WriteLine("Student 8 <= Student 7 -- False: " + (stu8 <= stu7));
+            Console.WriteLine("Student 8 >= Student 8 -- True: " + (stu8 >= stu8));
+            Console.WriteLine("Student 8 >= Student 7: -- True: " + (stu8 >= stu7));
+            Console.WriteLine("Student 7 >= Student 8: -- False: " + (stu7 >= stu8));
+
+            Console.WriteLine();
+
             // Testing GetHashCode()
             Console.WriteLine("----------GetHashCode Testing----------");
             Console.WriteLine("Student 1 Hash Code: " + stu1.GetHashCode());
