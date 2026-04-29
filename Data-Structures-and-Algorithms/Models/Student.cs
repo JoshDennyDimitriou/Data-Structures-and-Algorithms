@@ -124,6 +124,22 @@ namespace Data_Structures_and_Algorithms
         {
             return !object.Equals(stu1, stu2);
         }
+        public static bool operator <(Student stu1, Student stu2)
+        {
+            return stu1 < stu2;
+        }
+        public static bool operator >(Student stu1, Student stu2)
+        {
+            return stu1 > stu2;
+        }
+        public static bool operator <=(Student stu1, Student stu2)
+        {
+            return stu1 <= stu2;
+        }
+        public static bool operator >=(Student stu1, Student stu2)
+        {
+            return stu1 >= stu2;
+        }
         /// <summary>
         /// Takes in two Student objects and compares them
         /// </summary>
