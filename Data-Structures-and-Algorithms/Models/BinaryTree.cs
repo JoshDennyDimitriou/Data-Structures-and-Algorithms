@@ -1,39 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms.Models
 {
-    public class BinaryTree
+    public class BinaryTree<T> where T : IComparable<T>
     {
-        public Node Root { get; set; }
+        public Node<T> Root { get; set; }
 
-        public bool Add(int value)
+        public bool Add(T value)
         {
-            Node before = null;
-            Node after = this.Root;
+            Node<T> before = null;
+            Node<T> after = this.Root;
 
             while (after != null)
             {
                 before = after;
-                if (value < after.Data)
-                    after = after.LeftNode.LeftNode;
-                else if (value > after.Data)
+                if (value.CompareTo(after.Data) < 0)
+                    after = after.LeftNode;
+                else if (value.CompareTo(after.Data) > 0)
                     after = after.RightNode;
                 else
                     return false;
             }
 
-            Node newNode = new Node();
+            Node<T> newNode = new Node<T>();
             newNode.Data = value;
 
             if (this.Root == null)
                 this.Root = newNode;
             else
             {
-                if (value < before.Data)
+                if (value.CompareTo(before.Data) < 0)
                     before.LeftNode = newNode;
                 else
                     before.RightNode = newNode;
@@ -41,16 +42,16 @@ namespace Data_Structures_and_Algorithms.Models
             return true;
         }
 
-        public Node Find(int value)
+        public Node<T> Find(T value)
         {
             return this.Find(value, this.Root);
         }
-        private Node Find(int value, Node parent)
+        private Node<T> Find(T value, Node<T> parent)
         {
             if (parent != null)
             {
-                if (value == parent.Data) return parent;
-                if (value < parent.Data)
+                if (value.CompareTo(parent.Data) == 0) return parent;
+                if (value.CompareTo(parent.Data) < 0)
                     return Find(value, parent.LeftNode);
                 else
                     return Find(value, parent.RightNode);
@@ -58,16 +59,16 @@ namespace Data_Structures_and_Algorithms.Models
             return null;
         }
 
-        public Node Remove(int value)
+        public Node<T> Remove(T value)
         {
             return this.Remove(this.Root, value);
         }
-        private Node Remove(Node parent, int key)
+        private Node<T> Remove(Node<T> parent, T key)
         {
             if (parent == null) return parent;
-            if (key < parent.Data)
+            if (key.CompareTo(parent.Data) < 0)
                 parent.LeftNode = Remove(parent.LeftNode, key);
-            else if (key > parent.Data)
+            else if (key.CompareTo(parent.Data) > 0)
                 parent.RightNode = Remove(parent.RightNode, key);
             else
             {
@@ -81,9 +82,9 @@ namespace Data_Structures_and_Algorithms.Models
             return parent;
         }
 
-        private int MinValue(Node node)
+        private T MinValue(Node<T> node)
         {
-            int minv = node.Data;
+            T minv = node.Data;
             while (node.LeftNode != null)
             {
                 minv = node.LeftNode.Data;
@@ -96,12 +97,12 @@ namespace Data_Structures_and_Algorithms.Models
         {
             return this.GetTreeDepth(this.Root);
         }
-        private int GetTreeDepth(Node current)
+        private int GetTreeDepth(Node<T> current)
         {
             return current == null ? 0 : Math.Max(GetTreeDepth(current.LeftNode), GetTreeDepth(current.RightNode)) + 1;
         }
 
-        public void TraversePreOrder(Node parent)
+        public void TraversePreOrder(Node<T> parent)
         {
             if (parent != null)
             {
@@ -110,7 +111,7 @@ namespace Data_Structures_and_Algorithms.Models
                 TraversePreOrder(parent.RightNode);
             }
         }
-        public void TraverseInOrder(Node parent)
+        public void TraverseInOrder(Node<T> parent)
         {
             if (parent != null)
             {
@@ -119,7 +120,7 @@ namespace Data_Structures_and_Algorithms.Models
                 TraverseInOrder(parent.RightNode);
             }
         }
-        public void TraversePostOrder(Node parent)
+        public void TraversePostOrder(Node<T> parent)
         {
             if (parent != null)
             {

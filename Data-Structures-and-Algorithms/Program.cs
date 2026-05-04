@@ -249,23 +249,68 @@ namespace Data_Structures_and_Algorithms
             Utilities.MergeSort(students, 1);
             Utilities.PrintStudents(students);
 
+            Console.WriteLine("\n");
+
+            Console.WriteLine("--------------------Binary Tree Testing--------------------");
+
             Console.WriteLine();
 
-            Console.WriteLine("Testing Single Linked List");
+            // Creating students with single digit Student ID's for easier Binary Tree testing
+            Student stu7 = new Student("7");
+            Student stu8 = new Student("8");
+            Student stu9 = new Student("9");
+            Student stu10 = new Student("10");
+            Student stu11 = new Student("11");
+            Student stu12 = new Student("12");
+            Student stu13 = new Student("13");
 
-            Console.WriteLine();
+            BinaryTree<Student> bt = new BinaryTree<Student>();
+            
+            bt.Add(stu10);
+            bt.Add(stu8);
+            bt.Add(stu12);
+            bt.Add(stu11);
+            bt.Add(stu7);
+            bt.Add(stu9);
+            bt.Add(stu13);
+            Console.WriteLine("Student Tree:\n");
+            bt.TraverseInOrder(bt.Root);
+            // Binary Tree with Students seems to not be using the left node
+            BinaryTree<int> it = new BinaryTree<int>();
 
-            DoubleLinkedList<Student> doubleLinkedList = new DoubleLinkedList<Student> { stu1, stu2 };
-            PrintSingleList(doubleLinkedList);
-            doubleLinkedList.AddFirst(stu3);
-            doubleLinkedList.AddFirst(stu4);
-            PrintSingleList(doubleLinkedList);
-            Console.WriteLine("Showing Head then Tail");
-            Console.WriteLine(doubleLinkedList.Head.Value.StudentStudentID);
-            Console.WriteLine(doubleLinkedList.Tail.Value.StudentStudentID);
-            Console.WriteLine("Removing last:");
-            doubleLinkedList.RemoveLast();
-            PrintSingleList(doubleLinkedList);
+            it.Add(10);
+            it.Add(8);
+            it.Add(12);
+            it.Add(11);
+            it.Add(7);
+            it.Add(9);
+            it.Add(13);
+            Console.WriteLine("\n\nInt Tree:");
+            it.TraverseInOrder(it.Root);
+
+            BinaryTree<string> st = new BinaryTree<string>();
+
+            st.Add("10");
+            st.Add("8");
+            st.Add("12");
+            st.Add("11");
+            st.Add("7");
+            st.Add("9");
+            st.Add("13");
+            Console.WriteLine("\n\nNumeric String Tree:");
+            st.TraverseInOrder(st.Root);
+
+            BinaryTree<string> at = new BinaryTree<string>();
+
+            at.Add("j");
+            at.Add("h");
+            at.Add("l");
+            at.Add("k");
+            at.Add("g");
+            at.Add("i");
+            at.Add("m");
+            Console.WriteLine("\n\nAlpha String Tree:");
+            at.TraverseInOrder(at.Root);
 
             // Allowing a user to search for a Student
             //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
@@ -322,15 +367,6 @@ namespace Data_Structures_and_Algorithms
             //Utilities.MergeSort(numsMerge);
             //sw.Stop();
             //Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
-        }
-
-        private static void PrintSingleList(DoubleLinkedList<Student> list)
-        {
-            foreach (Student student in list)
-            {
-                Console.WriteLine(student.StudentStudentID);
-            }
-            Console.WriteLine("List Count: " + list.Count);
         }
     }                              
 }              
