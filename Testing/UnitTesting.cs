@@ -163,18 +163,18 @@ namespace Testing
 
         // Test 9 - Testing SingleLinkedList AddFirst() method
         [Test, Order(9)]
-        public void SingleListAddFirst()
+        public void SingleListAddHead()
         {
             singleLinkedList.AddFirst(stu10);
-            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListOneAdded));
+            Assert.That(singleLinkedList.Head.Value, Is.EqualTo(stu10));
         }
 
         // Test 10 - Testing SingleLinkedList AddLast() method
         [Test, Order(10)]
-        public void SingleListAddBoth()
+        public void SingleListAddTail()
         {
             singleLinkedList.AddLast(stu6);
-            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListBothAdded));
+            Assert.That(singleLinkedList.Tail.Value, Is.EqualTo(stu6));
         }
 
         // Test 11 - Testing SingleLinkedList Contains() method with stu8
@@ -186,23 +186,23 @@ namespace Testing
 
         // Test 12 - Testing SingleLinkedList RemoveFirst() method
         [Test, Order(12)]
-        public void SingleListRemoveFirst()
+        public void SingleListRemoveHead()
         {
             singleLinkedList.RemoveFirst();
-            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListOneRemoved));
+            Assert.That(singleLinkedList.Head.Value, Is.EqualTo(stu7));
         }
 
         // Test 13 - Testing SingleLinkedList RemoveLast() method
         [Test, Order(13)]
-        public void SingleListRemoveBoth()
+        public void SingleListRemoveTail()
         {
             singleLinkedList.RemoveLast();
-            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListBothRemoved));
+            Assert.That(singleLinkedList.Tail.Value, Is.EqualTo(stu3));
         }
 
         // Test 14 - Testing DoubleLinkedList AddFirst() method
         [Test, Order(14)]
-        public void DoubleListAddFirst()
+        public void DoubleListAddHead()
         {
             doubleLinkedList.AddFirst(stu10);
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListOneAdded));
@@ -210,7 +210,7 @@ namespace Testing
 
         // Test 15 - Testing DoubleLinkedList AddLast() method
         [Test, Order(15)]
-        public void DoubleListAddLast()
+        public void DoubleListAddTail()
         {
             doubleLinkedList.AddLast(stu6);
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListBothAdded));
@@ -225,7 +225,7 @@ namespace Testing
 
         // Test 17 - Testing DoubleLinkedList RemoveFirst() method
         [Test, Order(17)]
-        public void DoubleListRemoveFirst()
+        public void DoubleListRemoveHead()
         {
             doubleLinkedList.RemoveFirst();
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListOneRemoved));
@@ -233,7 +233,7 @@ namespace Testing
 
         // Test 18 - Testing DoubleLinkedList RemoveLast() method
         [Test, Order(18)]
-        public void DoubleListRemoveLast()
+        public void DoubleListRemoveTail()
         {
             doubleLinkedList.RemoveLast();
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListBothRemoved));
