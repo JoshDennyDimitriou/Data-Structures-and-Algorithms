@@ -255,17 +255,17 @@ namespace Data_Structures_and_Algorithms
 
             Console.WriteLine();
 
-            SingleLinkedList<Student> singleLinkedList = new SingleLinkedList<Student> { stu1, stu2 };
-            PrintSingleList(singleLinkedList);
-            singleLinkedList.AddFirst(stu3);
-            singleLinkedList.AddFirst(stu4);
-            PrintSingleList(singleLinkedList);
+            DoubleLinkedList<Student> doubleLinkedList = new DoubleLinkedList<Student> { stu1, stu2 };
+            PrintSingleList(doubleLinkedList);
+            doubleLinkedList.AddFirst(stu3);
+            doubleLinkedList.AddFirst(stu4);
+            PrintSingleList(doubleLinkedList);
             Console.WriteLine("Showing Head then Tail");
-            Console.WriteLine(singleLinkedList.Head.Value.StudentStudentID);
-            Console.WriteLine(singleLinkedList.Tail.Value.StudentStudentID);
-            Console.WriteLine("Removing first:");
-            singleLinkedList.RemoveFirst();
-            PrintSingleList(singleLinkedList);
+            Console.WriteLine(doubleLinkedList.Head.Value.StudentStudentID);
+            Console.WriteLine(doubleLinkedList.Tail.Value.StudentStudentID);
+            Console.WriteLine("Removing last:");
+            doubleLinkedList.RemoveLast();
+            PrintSingleList(doubleLinkedList);
 
             // Allowing a user to search for a Student
             //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));
@@ -324,7 +324,7 @@ namespace Data_Structures_and_Algorithms
             //Console.WriteLine("Time taken for Merge Sort: " + sw.Elapsed.TotalMilliseconds + " ms");
         }
 
-        private static void PrintSingleList(SingleLinkedList<Student> list)
+        private static void PrintSingleList(DoubleLinkedList<Student> list)
         {
             foreach (Student student in list)
             {

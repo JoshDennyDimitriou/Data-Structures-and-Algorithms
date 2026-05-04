@@ -56,17 +56,17 @@ namespace Testing
             // Creating an identical list as above but with stu10 added in for comparison
             singleLinkedListOneAdded = new SingleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7,
+                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list as above but with stu6 added in for comparison
             singleLinkedListBothAdded = new SingleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list to singleLinkedList without stu3 to test the remove first method
             singleLinkedListOneRemoved = new SingleLinkedList<Student>
             {
-                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
             };
             // Creating an identical list to singleLinkedList without stu7 to test the remove last method
             singleLinkedListBothRemoved = new SingleLinkedList<Student>
@@ -82,19 +82,19 @@ namespace Testing
             // Creating an identical list as above but with stu10 added in for comparison
             doubleLinkedListOneAdded = new DoubleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
+                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list as above but with stu6 added in for comparison
             doubleLinkedListBothAdded = new DoubleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list to doubleLinkedList without stu3 to test the remove first method
             doubleLinkedListOneRemoved = new DoubleLinkedList<Student>
             {
-                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
             };
-            // Creating an identical list to doubleLinkedList without stu7 to test the remova last method
+            // Creating an identical list to doubleLinkedList without stu7 to test the remove last method
             doubleLinkedListBothRemoved = new DoubleLinkedList<Student>
             {
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
@@ -166,7 +166,7 @@ namespace Testing
         public void SingleListAddHead()
         {
             singleLinkedList.AddFirst(stu10);
-            Assert.That(singleLinkedList.Head.Value, Is.EqualTo(stu10));
+            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListOneAdded));
         }
 
         // Test 10 - Testing SingleLinkedList AddLast() method
@@ -174,7 +174,7 @@ namespace Testing
         public void SingleListAddTail()
         {
             singleLinkedList.AddLast(stu6);
-            Assert.That(singleLinkedList.Tail.Value, Is.EqualTo(stu6));
+            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListBothAdded));
         }
 
         // Test 11 - Testing SingleLinkedList Contains() method with stu8
@@ -189,7 +189,7 @@ namespace Testing
         public void SingleListRemoveHead()
         {
             singleLinkedList.RemoveFirst();
-            Assert.That(singleLinkedList.Head.Value, Is.EqualTo(stu7));
+            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListOneRemoved));
         }
 
         // Test 13 - Testing SingleLinkedList RemoveLast() method
@@ -197,7 +197,7 @@ namespace Testing
         public void SingleListRemoveTail()
         {
             singleLinkedList.RemoveLast();
-            Assert.That(singleLinkedList.Tail.Value, Is.EqualTo(stu3));
+            Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListBothRemoved));
         }
 
         // Test 14 - Testing DoubleLinkedList AddFirst() method
