@@ -258,7 +258,40 @@ namespace Data_Structures_and_Algorithms
             // Binary Tree Testing will go here bc the methods to be tested are void and print out the result,
             // which means they cannot be tested in its current form.
 
+            // Creating Student Objects with only StudentID's that are easy to distinguish
+            Student stu10 = new Student("00111111");
+            Student stu11 = new Student("00222222");
+            Student stu12 = new Student("00333333");
+            Student stu13 = new Student("00444444");
+            Student stu14 = new Student("00555555");
+            Student stu15 = new Student("00666666");
+            Student stu16 = new Student("00777777");
 
+            BinaryTree<Student> bt = new BinaryTree<Student>();
+
+            bt.Add(stu13);
+            bt.Add(stu15);
+            bt.Add(stu11);
+            bt.Add(stu12);
+            bt.Add(stu10);
+            bt.Add(stu14);
+            bt.Add(stu16);
+
+            Console.WriteLine("*-*-*-*-*-*-*-*-*-*-Testing In Order Traversal:-*-*-*-*-*-*-*-*-*-*\n");
+            Console.WriteLine("Expected Result:\nStudent ID: 00111111\n Student ID: 00222222\n Student ID: 00333333\n " +
+                "Student ID: 00444444\n Student ID: 00555555\n Student ID: 00666666\n Student ID: 00777777");
+            Console.WriteLine("\n Actual Result:");
+            bt.TraverseInOrder(bt.Root);
+            Console.WriteLine("\n\n*-*-*-*-*-*-*-*-*-*-Testing Post Order Traversal:-*-*-*-*-*-*-*-*-*-*\n");
+            Console.WriteLine("Expected Result:\n Student ID: 00111111\n Student ID: 00333333\n Student ID: 00222222\n " +
+                "Student ID: 00555555\n Student ID: 00777777\n Student ID: 00666666\n Student ID: 00444444");
+            Console.WriteLine("\n Actual Result:");
+            bt.TraversePostOrder(bt.Root);
+            Console.WriteLine("\n\n*-*-*-*-*-*-*-*-*-*-Testing Pre Order Traversal:-*-*-*-*-*-*-*-*-*-*\n");
+            Console.WriteLine("Expected Result:\n Student ID: 00444444\n Student ID: 00222222\n Student ID: 00111111\n " +
+                "Student ID: 00333333\n Student ID: 00666666\n Student ID: 00555555\n Student ID: 00777777");
+            Console.WriteLine("\n Actual Result:");
+            bt.TraversePreOrder(bt.Root);
 
             // Allowing a user to search for a Student
             //Console.WriteLine("\nSearching for Student 1: " + Utilities.BinarySearch(students, stu1));

@@ -80,12 +80,17 @@ namespace Data_Structures_and_Algorithms
         /// An override of the default ToString method
         /// </summary>
         /// <returns>string</returns>
+        //public override string ToString()
+        //{
+        //    return base.ToString() + "Student ID: " + StudentStudentID +
+        //        "\nProgram: " + StudentProgram +
+        //        "\nDate Registered:" + StudentDateRegistered +
+        //        "\nEnrollment: [\n" + StudentEnrollment + "\n\t\t]";
+        //}
+
         public override string ToString()
         {
-            return base.ToString() + "Student ID: " + StudentStudentID +
-                "\nProgram: " + StudentProgram +
-                "\nDate Registered:" + StudentDateRegistered +
-                "\nEnrollment: [\n" + StudentEnrollment + "\n\t\t]";
+            return "Student ID: " + StudentStudentID + "\n";
         }
 
         /// <summary>
