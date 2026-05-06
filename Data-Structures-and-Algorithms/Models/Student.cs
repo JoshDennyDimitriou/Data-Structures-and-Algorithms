@@ -126,19 +126,31 @@ namespace Data_Structures_and_Algorithms
         }
         public static bool operator <(Student stu1, Student stu2)
         {
-            return int.Parse(stu1.studentID) < int.Parse(stu2.studentID);
+            if (stu1.CompareTo(stu2) < 0)
+                return true;
+            else
+                return false;
         }
         public static bool operator >(Student stu1, Student stu2)
         {
-            return int.Parse(stu1.studentID) > int.Parse(stu2.studentID);
+            if (stu1.CompareTo(stu2) > 0)
+                return true;
+            else
+                return false;
         }
         public static bool operator <=(Student stu1, Student stu2)
         {
-            return int.Parse(stu1.studentID) <= int.Parse(stu2.studentID);
+            if (stu1.CompareTo(stu2) <= 0)
+                return true;
+            else
+                return false;
         }
         public static bool operator >=(Student stu1, Student stu2)
         {
-            return int.Parse(stu1.studentID) >= int.Parse(stu2.studentID);
+            if (stu1.CompareTo(stu2) >= 0)
+                return true;
+            else
+                return false;
         }
         /// <summary>
         /// Takes in two Student objects and compares them
