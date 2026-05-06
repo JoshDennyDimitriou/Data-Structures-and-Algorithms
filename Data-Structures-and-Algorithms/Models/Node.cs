@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms.Models
 {
-    public class Node
+    public class Node<T> where T : IComparable<T>
     {
-        public Node LeftNode { get; set; }
-        public Node RightNode { get; set; }
-        public int Data { get; set; }
+        public Node<T> LeftNode { get; set; }
+        public Node<T> RightNode { get; set; }
+        public T Data { get; set; }
     }
 }

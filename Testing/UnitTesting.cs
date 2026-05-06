@@ -56,17 +56,17 @@ namespace Testing
             // Creating an identical list as above but with stu10 added in for comparison
             singleLinkedListOneAdded = new SingleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7,
+                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list as above but with stu6 added in for comparison
             singleLinkedListBothAdded = new SingleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list to singleLinkedList without stu3 to test the remove first method
             singleLinkedListOneRemoved = new SingleLinkedList<Student>
             {
-                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
             };
             // Creating an identical list to singleLinkedList without stu7 to test the remove last method
             singleLinkedListBothRemoved = new SingleLinkedList<Student>
@@ -82,19 +82,19 @@ namespace Testing
             // Creating an identical list as above but with stu10 added in for comparison
             doubleLinkedListOneAdded = new DoubleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
+                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list as above but with stu6 added in for comparison
             doubleLinkedListBothAdded = new DoubleLinkedList<Student>
             {
-                stu10, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
             };
             // Creating an identical list to doubleLinkedList without stu3 to test the remove first method
             doubleLinkedListOneRemoved = new DoubleLinkedList<Student>
             {
-                stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu6
+                stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
             };
-            // Creating an identical list to doubleLinkedList without stu7 to test the remova last method
+            // Creating an identical list to doubleLinkedList without stu7 to test the remove last method
             doubleLinkedListBothRemoved = new DoubleLinkedList<Student>
             {
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
@@ -163,7 +163,7 @@ namespace Testing
 
         // Test 9 - Testing SingleLinkedList AddFirst() method
         [Test, Order(9)]
-        public void SingleListAddFirst()
+        public void SingleListAddHead()
         {
             singleLinkedList.AddFirst(stu10);
             Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListOneAdded));
@@ -171,7 +171,7 @@ namespace Testing
 
         // Test 10 - Testing SingleLinkedList AddLast() method
         [Test, Order(10)]
-        public void SingleListAddBoth()
+        public void SingleListAddTail()
         {
             singleLinkedList.AddLast(stu6);
             Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListBothAdded));
@@ -186,7 +186,7 @@ namespace Testing
 
         // Test 12 - Testing SingleLinkedList RemoveFirst() method
         [Test, Order(12)]
-        public void SingleListRemoveFirst()
+        public void SingleListRemoveHead()
         {
             singleLinkedList.RemoveFirst();
             Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListOneRemoved));
@@ -194,7 +194,7 @@ namespace Testing
 
         // Test 13 - Testing SingleLinkedList RemoveLast() method
         [Test, Order(13)]
-        public void SingleListRemoveBoth()
+        public void SingleListRemoveTail()
         {
             singleLinkedList.RemoveLast();
             Assert.That(singleLinkedList, Is.EqualTo(singleLinkedListBothRemoved));
@@ -202,7 +202,7 @@ namespace Testing
 
         // Test 14 - Testing DoubleLinkedList AddFirst() method
         [Test, Order(14)]
-        public void DoubleListAddFirst()
+        public void DoubleListAddHead()
         {
             doubleLinkedList.AddFirst(stu10);
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListOneAdded));
@@ -210,7 +210,7 @@ namespace Testing
 
         // Test 15 - Testing DoubleLinkedList AddLast() method
         [Test, Order(15)]
-        public void DoubleListAddLast()
+        public void DoubleListAddTail()
         {
             doubleLinkedList.AddLast(stu6);
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListBothAdded));
@@ -225,7 +225,7 @@ namespace Testing
 
         // Test 17 - Testing DoubleLinkedList RemoveFirst() method
         [Test, Order(17)]
-        public void DoubleListRemoveFirst()
+        public void DoubleListRemoveHead()
         {
             doubleLinkedList.RemoveFirst();
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListOneRemoved));
@@ -233,7 +233,7 @@ namespace Testing
 
         // Test 18 - Testing DoubleLinkedList RemoveLast() method
         [Test, Order(18)]
-        public void DoubleListRemoveLast()
+        public void DoubleListRemoveTail()
         {
             doubleLinkedList.RemoveLast();
             Assert.That(doubleLinkedList, Is.EqualTo(doubleLinkedListBothRemoved));

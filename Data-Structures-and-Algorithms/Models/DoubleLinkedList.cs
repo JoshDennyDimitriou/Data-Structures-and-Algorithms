@@ -105,7 +105,7 @@ namespace Data_Structures_and_Algorithms.Models
                 }
                 else
                 {
-                    Tail.Previous = null;
+                    Tail.Previous.Next = null;
                     Tail = Tail.Previous;
                 }
                 Count--;
