@@ -49,56 +49,56 @@ namespace Testing
 
             // singleLinkedList will use randomly placed students for testing
             // Data is added to the list without stu6 and stu10 as they will be used to test the adding methods
-            singleLinkedList = new SingleLinkedList<Student>
-            {
+            singleLinkedList =
+            [
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
-            };
+            ];
             // Creating an identical list as above but with stu10 added in for comparison
-            singleLinkedListOneAdded = new SingleLinkedList<Student>
-            {
+            singleLinkedListOneAdded =
+            [
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
-            };
+            ];
             // Creating an identical list as above but with stu6 added in for comparison
-            singleLinkedListBothAdded = new SingleLinkedList<Student>
-            {
+            singleLinkedListBothAdded =
+            [
                 stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
-            };
+            ];
             // Creating an identical list to singleLinkedList without stu3 to test the remove first method
-            singleLinkedListOneRemoved = new SingleLinkedList<Student>
-            {
+            singleLinkedListOneRemoved =
+            [
                 stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
-            };
+            ];
             // Creating an identical list to singleLinkedList without stu7 to test the remove last method
-            singleLinkedListBothRemoved = new SingleLinkedList<Student>
-            {
+            singleLinkedListBothRemoved =
+            [
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
-            };
+            ];
 
             // doubleLinkedList will use the same order as singleLinkedList with the same students missing to test the adding methods
-            doubleLinkedList = new DoubleLinkedList<Student>
-            {
+            doubleLinkedList =
+            [
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
-            };
+            ];
             // Creating an identical list as above but with stu10 added in for comparison
-            doubleLinkedListOneAdded = new DoubleLinkedList<Student>
-            {
+            doubleLinkedListOneAdded =
+            [
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
-            };
+            ];
             // Creating an identical list as above but with stu6 added in for comparison
-            doubleLinkedListBothAdded = new DoubleLinkedList<Student>
-            {
+            doubleLinkedListBothAdded =
+            [
                 stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7, stu10
-            };
+            ];
             // Creating an identical list to doubleLinkedList without stu3 to test the remove first method
-            doubleLinkedListOneRemoved = new DoubleLinkedList<Student>
-            {
+            doubleLinkedListOneRemoved =
+            [
                 stu6, stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
-            };
+            ];
             // Creating an identical list to doubleLinkedList without stu7 to test the remove last method
-            doubleLinkedListBothRemoved = new DoubleLinkedList<Student>
-            {
+            doubleLinkedListBothRemoved =
+            [
                 stu3, stu9, stu8, stu4, stu2, stu5, stu1, stu7
-            };
+            ];
         }
 
         // Test 1 - Testing Linear Search Found on studentArr1 -> using stu4
@@ -181,7 +181,7 @@ namespace Testing
         [Test, Order(11)]
         public void SingleListContains()
         {
-            Assert.That(singleLinkedList.Contains(stu8), Is.EqualTo(true));
+            Assert.That(singleLinkedList, Does.Contain(stu8));
         }
 
         // Test 12 - Testing SingleLinkedList RemoveFirst() method
@@ -220,7 +220,7 @@ namespace Testing
         [Test, Order(16)]
         public void DoubleListContains()
         {
-            Assert.That(doubleLinkedList.Contains(stu8), Is.EqualTo(true));
+            Assert.That(doubleLinkedList, Does.Contain(stu8));
         }
 
         // Test 17 - Testing DoubleLinkedList RemoveFirst() method

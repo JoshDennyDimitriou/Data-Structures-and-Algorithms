@@ -210,10 +210,12 @@ namespace Data_Structures_and_Algorithms
             Console.WriteLine("Student 8 < Student 7 -- False: " + (stu7 > stu8));
             Console.WriteLine("Student 8 > Student 7 -- True: " + (stu8 > stu7));
             Console.WriteLine("Student 7 > Student 8 -- False: " + (stu7 > stu8));
+#pragma warning disable CS1718 // Comparison made to same variable
             Console.WriteLine("Student 7 <= Student 7 -- True: " + (stu7 <= stu7));
             Console.WriteLine("Student 7 <= Student 8 -- True: " + (stu7 <= stu8));
             Console.WriteLine("Student 8 <= Student 7 -- False: " + (stu8 <= stu7));
             Console.WriteLine("Student 8 >= Student 8 -- True: " + (stu8 >= stu8));
+#pragma warning restore CS1718 // Comparison made to same variable
             Console.WriteLine("Student 8 >= Student 7: -- True: " + (stu8 >= stu7));
             Console.WriteLine("Student 7 >= Student 8: -- False: " + (stu7 >= stu8));
 
