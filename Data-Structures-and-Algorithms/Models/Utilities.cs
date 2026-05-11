@@ -43,19 +43,25 @@ namespace Data_Structures_and_Algorithms.Models
         /// <returns>The Criteria's index if found and -1 if not found</returns>
         public static int LinearSearch<T>(T[] myArray, T criteria) where T : IComparable<T>
         {
-            int i = 0;
-            bool found = false;
-            while (!found && i < myArray.Length)
+            try
             {
-                if (criteria.CompareTo(myArray[i]) == 0)
-                    found = true;
+                int i = 0;
+                bool found = false;
+                while (!found && i < myArray.Length)
+                {
+                    if (criteria.CompareTo(myArray[i]) == 0)
+                        found = true;
+                    else
+                        i++;
+                }
+                if (i < myArray.Length)
+                    return i;
                 else
-                    i++;
+                    return -1;
+            } catch (ArgumentException ex)
+            {
+                throw new ArgumentException("Incorrect parameters used", ex);
             }
-            if (i < myArray.Length)
-                return i;
-            else
-                return -1;
         }
 
         // **********Psuedocode for Binary Search**********
@@ -93,21 +99,28 @@ namespace Data_Structures_and_Algorithms.Models
         /// <returns>The Criteria's index if found and -1 if not found</returns>
         public static int BinarySearch<T>(T[] myArray, T criteria) where T : IComparable<T>
         {
-            int min = 0;
-            int max = myArray.Length - 1;
-            int mid;
-
-            do
+            try
             {
-                mid = (min + max) / 2;
-                if (myArray[mid].CompareTo(criteria) == 0)
-                    return mid;
-                if (criteria.CompareTo(myArray[mid]) > 0)
-                    min = mid + 1;
-                else
-                    max = mid - 1;
-            } while (min <= max);
-            return -1;
+                int min = 0;
+                int max = myArray.Length - 1;
+                int mid;
+
+                do
+                {
+                    mid = (min + max) / 2;
+                    if (myArray[mid].CompareTo(criteria) == 0)
+                        return mid;
+                    if (criteria.CompareTo(myArray[mid]) > 0)
+                        min = mid + 1;
+                    else
+                        max = mid - 1;
+                } while (min <= max);
+                return -1;
+            } catch (ArgumentException ex)
+            {
+                throw new ArgumentException("Incorrect parameters used", ex);
+            }
+            
         }
         /// <summary>
         /// Merge sort takes in an array and an order direction. It will then recursively split the
