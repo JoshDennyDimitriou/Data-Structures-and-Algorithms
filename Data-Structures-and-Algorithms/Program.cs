@@ -237,28 +237,28 @@ namespace Data_Structures_and_Algorithms
             int[] scores = { 2, 5, 26, 4, 64, 1, 34, 25, 63, 91, 109, 24, 31, 45, 12 };
             Console.WriteLine("Original Scores array:");
             Utilities.PrintArray(scores);
-            Console.WriteLine("Sorting Scores Array:");
+            Console.Write("\n\nSorting Scores Array:");
             Utilities.MergeSort(scores, 1);
             Utilities.PrintArray(scores);
-            Console.WriteLine("Linear Search:");
+            Console.WriteLine("\n\nLinear Search:");
             Console.WriteLine("Searching 34: " + Utilities.LinearSearch(scores, 34));
-            Console.WriteLine("Binary Search:");
+            Console.WriteLine("\nBinary Search:");
             Console.WriteLine("Searching 109: " + Utilities.BinarySearch(scores, 109));
-            Console.WriteLine("Searching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " || Binary -> " + Utilities.BinarySearch(scores, 11));
+            Console.WriteLine("\nSearching 11: Linear -> " + Utilities.LinearSearch(scores, 11) + " || Binary -> " + Utilities.BinarySearch(scores, 11));
 
             Console.WriteLine();
 
             string[] cities = { "Adelaide", "Perth", "Melbourne", "Brisbane", "Sydney"};
-            Console.WriteLine("Original Cities Array");
+            Console.Write("\n\nOriginal Cities Array");
             Utilities.PrintArray(cities);
-            Console.WriteLine("Sorting Array:");
+            Console.Write("\n\nSorting Array:");
             Utilities.MergeSort(cities, 1);
             Utilities.PrintArray(cities);
-            Console.WriteLine("Linear Search:");
-            Console.WriteLine("Searching Perth: " + Utilities.LinearSearch(cities, "Perth"));
-            Console.WriteLine("Binary Search:");
+            Console.Write("\n\nLinear Search:");
+            Console.WriteLine("\nSearching Perth: " + Utilities.LinearSearch(cities, "Perth"));
+            Console.WriteLine("\nBinary Search:");
             Console.WriteLine("Searching Sydney: " + Utilities.BinarySearch(cities, "Sydney"));
-            Console.WriteLine("Searching Hobart: Linear -> " + Utilities.LinearSearch(cities, "Hobart") + " || Binary -> " + Utilities.BinarySearch(cities, "Hobart"));
+            Console.WriteLine("\nSearching Hobart: Linear -> " + Utilities.LinearSearch(cities, "Hobart") + " || Binary -> " + Utilities.BinarySearch(cities, "Hobart"));
 
 
             Console.WriteLine();
