@@ -9,12 +9,12 @@ namespace Data_Structures_and_Algorithms.Models
 {
     public class SingleLinkedList<T> : ICollection<T>
     {
-        public LinkedListNode<T> Head
+        public LinkedListNodeSingle<T> Head
         {
             get;
             private set;
         }
-        public LinkedListNode<T> Tail
+        public LinkedListNodeSingle<T> Tail
         {
             get;
             private set;
@@ -27,11 +27,11 @@ namespace Data_Structures_and_Algorithms.Models
 
         public void AddFirst(T value)
         {
-            AddFirst(new LinkedListNode<T>(value));
+            AddFirst(new LinkedListNodeSingle<T>(value));
         }
-        public void AddFirst(LinkedListNode<T> node)
+        public void AddFirst(LinkedListNodeSingle<T> node)
         {
-            LinkedListNode<T> temp = Head;
+            LinkedListNodeSingle<T> temp = Head;
             Head = node;
             Head.Next = temp;
             Count++;
@@ -43,9 +43,9 @@ namespace Data_Structures_and_Algorithms.Models
 
         public void AddLast(T value)
         {
-            AddLast(new LinkedListNode<T>(value));
+            AddLast(new LinkedListNodeSingle<T>(value));
         }
-        public void AddLast(LinkedListNode<T> node)
+        public void AddLast(LinkedListNodeSingle<T> node)
         {
             if (Count == 0)
             {
@@ -83,7 +83,7 @@ namespace Data_Structures_and_Algorithms.Models
                 }
                 else
                 {
-                    LinkedListNode<T> current = Head;
+                    LinkedListNodeSingle<T> current = Head;
                     while (current.Next != Tail)
                     {
                         current = current.Next;
@@ -102,7 +102,7 @@ namespace Data_Structures_and_Algorithms.Models
 
         public bool Contains(T item)
         {
-            LinkedListNode<T> current = Head;
+            LinkedListNodeSingle<T> current = Head;
             while (current != null)
             {
                 if (current.Value.Equals(item))
@@ -116,7 +116,7 @@ namespace Data_Structures_and_Algorithms.Models
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            LinkedListNode<T> current = Head;
+            LinkedListNodeSingle<T> current = Head;
             while (current != null)
             {
                 array[arrayIndex++] = current.Value;
@@ -134,8 +134,8 @@ namespace Data_Structures_and_Algorithms.Models
 
         public bool Remove(T item)
         {
-            LinkedListNode<T> previous = null;
-            LinkedListNode<T> current = Head;
+            LinkedListNodeSingle<T> previous = null;
+            LinkedListNodeSingle<T> current = Head;
 
             while (current != null)
             {
@@ -164,7 +164,7 @@ namespace Data_Structures_and_Algorithms.Models
 
         public IEnumerator<T> GetEnumerator()
         {
-            LinkedListNode<T> current = Head;
+            LinkedListNodeSingle<T> current = Head;
             while (current != null)
             {
                 yield return current.Value;

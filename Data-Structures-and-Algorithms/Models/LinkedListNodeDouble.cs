@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Data_Structures_and_Algorithms.Models
 {
-    public class LinkedListNode<T>
+    public class LinkedListNodeDouble<T>
     {
-        public LinkedListNode(T value)
+        public LinkedListNodeDouble(T value)
         {
             Value = value;
         }
 
         public T Value { get; set; }
-        public LinkedListNode<T> Next { get; set; }
-        public LinkedListNode<T> Previous { get; set; }
+        public LinkedListNodeDouble<T> Next { get; set; }
+        public LinkedListNodeDouble<T> Previous { get; set; }
     }
 }
